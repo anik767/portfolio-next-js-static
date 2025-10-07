@@ -72,8 +72,6 @@ const Projects = () => {
     }
   ];
 
-  const categories = ['All', 'Full Stack', 'Web App', 'Frontend', 'CMS', 'Portfolio', 'Developer Tool'];
-
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,20 +98,6 @@ const Projects = () => {
           >
             A collection of projects that showcase my skills and passion for creating innovative solutions.
           </Text>
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, index) => (
-            <Badge 
-              key={index} 
-              variant={category === 'All' ? 'primary' : 'secondary'} 
-              size="md"
-              className="cursor-pointer hover:scale-105 transition-transform"
-            >
-              {category}
-            </Badge>
-          ))}
         </div>
 
         {/* Projects Grid */}

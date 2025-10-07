@@ -4,6 +4,7 @@ import "./globals.css";
 import GSAPScrollWrapper from "./components/GSAPScrollWrapper";
 import ScrollAnimations from "./components/ScrollAnimations";
 import Header from "./components/Header";
+import BackToTopButton from "./components/BackToTopButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -39,7 +40,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Azmain Iqtidar Anik - Full Stack Developer",
-  description: "Portfolio website of John Doe, a passionate full stack developer and UI/UX designer creating beautiful, functional, and user-centered digital experiences.",
+  description: "Portfolio website of Azmain Iqtidar Anik, a passionate full stack developer and UI/UX designer creating beautiful, functional, and user-centered digital experiences.",
 };
 
 export default function RootLayout({
@@ -57,6 +58,7 @@ export default function RootLayout({
           <ScrollAnimations />
           {children}
         </GSAPScrollWrapper>
+        <BackToTopButton />
       </body>
     </html>
   );

@@ -28,7 +28,7 @@ const Hero = () => {
           {/* Left Section - Text Content */}
           <div id="hero-content" className="text-white space-y-7 relative z-40">
               {/* Small text with enhanced styling */}
-              <div className="inline-block">
+              <div id="hero-greeting" className="inline-block">
                 <Badge variant="secondary" className="tracking-[0.3em]">
                   Hallo
                 </Badge>
@@ -36,13 +36,14 @@ const Hero = () => {
 
             {/* Main heading with enhanced effects */}
             <div className="space-y-0.5">
-              <Text variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
+              <Text id="hero-i-am" variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
                 I AM
               </Text>
-              <Text variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
+              <Text id="hero-name" variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
                Azmain Iqtidar Anik
               </Text>
               <Text 
+                id="hero-title"
                 variant="h1" 
                 size="4xl" 
                 gradient="blue"
@@ -73,7 +74,7 @@ const Hero = () => {
               />
             
             {/* Enhanced CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-6">
+            <div id="hero-buttons" className="flex flex-col sm:flex-row gap-6">
               <Button
                 scrollTo="projects"
                 variant="secondary"
