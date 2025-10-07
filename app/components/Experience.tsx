@@ -48,7 +48,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div id="experience-header" className="text-center mb-16">
           <Text 
             variant="h2" 
             size="3xl" 
@@ -73,14 +73,14 @@ const Experience = () => {
           </Text>
         </div>
 
-        <div className="space-y-8">
+        <div id="experience-content" className="space-y-8">
           {experiences.map((exp, index) => (
             <Card
               key={index}
               variant="elevated"
               hover="slide"
               shadow="lg"
-              className="group"
+              className="group experience-item"
               padding="lg"
             >
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -187,43 +187,6 @@ const Experience = () => {
               </div>
             </Card>
           ))}
-        </div>
-
-        {/* CTA Section */}
-        <div className="mt-16 text-center">
-          <Card 
-            variant="filled" 
-            className="bg-gradient-to-r from-gray-900 to-gray-800 text-white border-0"
-            padding="xl"
-          >
-            <Text 
-              variant="h3" 
-              size="2xl" 
-              fontFamily="rajdhani" 
-              color="white" 
-              weight="bold"
-              align="center"
-              className="mb-4"
-            >
-              Ready to Work Together?
-            </Text>
-            <Text 
-              variant="body" 
-              size="lg" 
-              fontFamily="poppins" 
-              color="white" 
-              align="center"
-              className="mb-6 max-w-2xl mx-auto opacity-90"
-            >
-              Let's discuss how my experience can help bring your project to life. 
-              I'm always excited to work on new challenges!
-            </Text>
-            <div className="flex justify-center">
-              <Button variant="outline" size="md" color="gray" >
-                View My Resume
-              </Button>
-            </div>
-          </Card>
         </div>
       </div>
     </section>

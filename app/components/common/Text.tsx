@@ -14,6 +14,7 @@ interface TextProps {
   align?: 'left' | 'center' | 'right' | 'justify';
   className?: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
+  id?: string;
 }
 
 const Text = ({ 
@@ -27,7 +28,8 @@ const Text = ({
   fontFamily = 'sans',
   align = 'left',
   className = '',
-  as
+  as,
+  id
 }: TextProps) => {
   // Default size mapping based on variant
   const defaultSizes = {
@@ -143,7 +145,7 @@ const Text = ({
   const gradientClassName = isGradient ? `${directionClass} ${gradientClass} bg-clip-text text-transparent` : '';
 
   return (
-    <Component className={`${finalClassName} ${gradientClassName}`}>
+    <Component id={id} className={`${finalClassName} ${gradientClassName}`}>
       {children}
     </Component>
   );

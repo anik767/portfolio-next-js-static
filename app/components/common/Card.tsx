@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 
 interface CardProps {
   children: ReactNode;
+  id?: string;
   variant?: 'default' | 'elevated' | 'outlined' | 'filled';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
@@ -14,6 +15,7 @@ interface CardProps {
 
 const Card = ({ 
   children, 
+  id,
   variant = 'default',
   size = 'md',
   className = '',
@@ -21,7 +23,7 @@ const Card = ({
   padding = 'md',
   shadow
 }: CardProps) => {
-  const baseClasses = "bg-white rounded-xl border border-gray-100 transition-all duration-300";
+  const baseClasses = "bg-white rounded-xl border border-gray-100 transition-all duration-300 shadow-md";
   
   const getShadowClasses = () => {
     if (shadow) {
@@ -78,7 +80,7 @@ const Card = ({
       slide: "hover:translate-x-2 hover:shadow-2xl",
       rotate: "hover:rotate-1 hover:shadow-2xl",
       fade: "hover:opacity-90 hover:shadow-2xl",
-      pulse: "hover:animate-pulse hover:shadow-2xl"
+      pulse: "hover:shadow-2xl"
     };
     
     return hoverTypeClasses[hover] || "";
@@ -87,7 +89,7 @@ const Card = ({
   const finalPadding = padding !== 'md' ? paddingClasses[padding] : sizeClasses[size];
 
   return (
-    <div className={`${baseClasses} ${getShadowClasses()} ${finalPadding} ${getHoverClasses()} ${className}`}>
+    <div id={id} className={`${baseClasses} ${getShadowClasses()} ${finalPadding} ${getHoverClasses()} ${className}`}>
       {children}
     </div>
   );

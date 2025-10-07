@@ -18,14 +18,11 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #F4F1EA;
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+
 
 body {
   background: var(--background);
@@ -79,5 +76,3 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-

@@ -69,7 +69,7 @@ const Services = () => {
   return (
     <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div id="services-header" className="text-center mb-16">
           <Text 
             variant="h2" 
             size="3xl" 
@@ -95,14 +95,14 @@ const Services = () => {
           </Text>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="services-content" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <Card
               key={index}
               variant="elevated"
               hover="lift"
               shadow="xl"
-              className="group"
+              className="group service-card"
               padding="md"
             >
               <div className="text-blue-600 mb-4 group-hover:text-blue-700 transition-colors">

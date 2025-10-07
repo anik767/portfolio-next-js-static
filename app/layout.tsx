@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Poppins, Playfair_Display, Rajdhani } from "next/font/google";
 import "./globals.css";
+import GSAPScrollWrapper from "./components/GSAPScrollWrapper";
+import ScrollAnimations from "./components/ScrollAnimations";
+import Header from "./components/Header";
+import BackToTopButton from "./components/BackToTopButton";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -36,7 +40,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Azmain Iqtidar Anik - Full Stack Developer",
-  description: "Portfolio website of John Doe, a passionate full stack developer and UI/UX designer creating beautiful, functional, and user-centered digital experiences.",
+  description: "Portfolio website of Azmain Iqtidar Anik, a passionate full stack developer and UI/UX designer creating beautiful, functional, and user-centered digital experiences.",
 };
 
 export default function RootLayout({
@@ -47,9 +51,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable} ${playfair.variable} ${rajdhani.variable} ${jetbrainsMono.variable}`}>
       <body
-        className={`${inter.className} ${inter.variable} ${poppins.variable} ${playfair.variable} ${rajdhani.variable} ${jetbrainsMono.variable} antialiased`}
+        className={`${inter.className} ${inter.variable} ${poppins.variable} ${playfair.variable} ${rajdhani.variable} ${jetbrainsMono.variable} bg-[#F4F1EA] antialiased`}
       >
-        {children}
+        <Header />
+        <GSAPScrollWrapper>
+          <ScrollAnimations />
+          {children}
+        </GSAPScrollWrapper>
+        <BackToTopButton />
       </body>
     </html>
   );
