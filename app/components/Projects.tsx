@@ -77,7 +77,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div id="projects-header" className="text-center mb-16">
           <Text 
             variant="h2" 
             size="3xl" 
@@ -117,14 +117,14 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="projects-content" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
               variant="elevated"
               hover="scale"
               shadow="2xl"
-              className="group overflow-hidden"
+              className="group overflow-hidden project-card"
               padding="none"
             >
               {/* Project Image */}

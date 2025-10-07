@@ -17,7 +17,7 @@ const About = () => {
   return (
     <section id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div id="about-header" className="text-center mb-16">
           <Text
             variant="h1"
             size="4xl"
@@ -93,7 +93,7 @@ const About = () => {
             >
               Technical Skills
             </Text>
-            <div className="space-y-6">
+            <div id="technical-skills" className="space-y-6">
               {skills.map((skill, index) => (
                 <Card key={index} variant="default" hover="fade" shadow="md">
                   <div className="flex justify-between items-center mb-3">

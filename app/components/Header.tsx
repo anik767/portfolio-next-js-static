@@ -16,15 +16,46 @@ const Header = () => {
     { id: 'contact', label: 'Contact' }
   ];
 
-  const scrollToSection = (sectionId: string) => {
+  const scrollToSection = async (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+      // Check if GSAP ScrollSmoother is available
+      if (typeof window !== 'undefined') {
+        try {
+          const { ScrollSmoother } = await import('gsap/ScrollSmoother');
+          const smoother = ScrollSmoother.get();
+          
+          if (smoother) {
+            // Use GSAP ScrollSmoother for smooth scrolling
+            smoother.scrollTo(element, true, "top top");
+          } else {
+            // Fallback to native scroll
+            element.scrollIntoView({ 
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        } catch (error) {
+          // Fallback to native scroll
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      }
+      
       setActiveSection(sectionId);
       setIsMenuOpen(false);
+      
+      // Refresh ScrollTrigger after navigation
+      setTimeout(async () => {
+        try {
+          const { ScrollTrigger } = await import('gsap/ScrollTrigger');
+          ScrollTrigger.refresh();
+        } catch (error) {
+          console.log('ScrollTrigger refresh failed:', error);
+        }
+      }, 100);
     }
   };
 

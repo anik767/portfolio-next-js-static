@@ -72,7 +72,7 @@ const Education = () => {
   return (
     <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div id="education-header" className="text-center mb-16">
           <Text 
             variant="h2" 
             size="3xl" 
@@ -98,7 +98,7 @@ const Education = () => {
         </div>
 
         {/* Education Section */}
-        <div className="mb-16">
+        <div id="education-content" className="mb-16">
           <Text 
             variant="h3" 
             size="2xl" 
@@ -117,7 +117,7 @@ const Education = () => {
                 variant="elevated"
                 hover="slide"
                 shadow="colored"
-                className="group"
+                className="group education-item"
                 padding="lg"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -245,14 +245,14 @@ const Education = () => {
           >
             Professional Certifications
           </Text>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div id="certifications-content" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {certifications.map((cert, index) => (
               <Card
                 key={index}
                 variant="elevated"
                 hover="slide"
                 shadow="colored"
-                className="group"
+                className="group certification-card"
                 padding="lg"
               >
                 <div className="flex items-start mb-4">

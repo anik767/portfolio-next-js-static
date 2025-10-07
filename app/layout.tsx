@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Poppins, Playfair_Display, Rajdhani } from "next/font/google";
 import "./globals.css";
 import GSAPScrollWrapper from "./components/GSAPScrollWrapper";
+import ScrollAnimations from "./components/ScrollAnimations";
+import Header from "./components/Header";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -50,7 +52,9 @@ export default function RootLayout({
       <body
         className={`${inter.className} ${inter.variable} ${poppins.variable} ${playfair.variable} ${rajdhani.variable} ${jetbrainsMono.variable} bg-[#F4F1EA] antialiased`}
       >
+        <Header />
         <GSAPScrollWrapper>
+          <ScrollAnimations />
           {children}
         </GSAPScrollWrapper>
       </body>

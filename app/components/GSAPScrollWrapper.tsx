@@ -20,8 +20,14 @@ const GSAPScrollWrapper = ({ children }: { children: React.ReactNode }) => {
           content: "#scroll-content",
           smooth: 1.5,
           effects: true,
-          normalizeScroll: true,
+          normalizeScroll: true
         });
+
+        // Configure ScrollTrigger for ScrollSmoother
+        ScrollTrigger.config({
+          ignoreMobileResize: true,
+        });
+       
 
         return smoother;
       }

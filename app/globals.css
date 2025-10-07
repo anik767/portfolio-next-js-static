@@ -22,24 +22,7 @@
   }
 }
 
-html {
-  scroll-behavior: smooth;
-}
 
-/* GSAP ScrollSmoother */
-#scroll-wrapper {
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-#scroll-content {
-  overflow: visible;
-  width: 100%;
-}
 
 body {
   background: var(--background);
@@ -93,5 +76,3 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-

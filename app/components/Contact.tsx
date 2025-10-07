@@ -61,7 +61,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
+        <div id="contact-header" className="text-center mb-16">
           <Text 
             variant="h2" 
             size="3xl" 
@@ -87,14 +87,14 @@ const Contact = () => {
           </Text>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div id="contact-content" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {contactInfo.map((info, index) => (
             <Card
               key={index}
               variant="elevated"
               hover="lift"
               shadow="lg"
-              className="group text-center"
+              className="group text-center contact-card"
               padding="lg"
             >
               <div className="text-blue-600 mb-4 group-hover:text-blue-700 transition-colors flex justify-center">
@@ -168,12 +168,13 @@ const Contact = () => {
           >
             Follow me on social media for updates and insights
           </Text>
-          <div className="flex justify-center space-x-6">
+          <div id="social-links" className="flex justify-center space-x-6">
             {socialLinks.map((social, index) => (
               <SocialLink
                 key={index}
                 href={social.href}
                 platform={social.platform as any}
+                className="social-link-item"
               />
             ))}
           </div>
