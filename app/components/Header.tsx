@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import gsap from 'gsap';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +9,7 @@ const Header = () => {
   const menuItemsRef = useRef<(HTMLButtonElement | null)[]>([]);
   const overlayRef = useRef<HTMLDivElement>(null);
   const menuContainerRef = useRef<HTMLDivElement>(null);
-  const timelineRef = useRef<gsap.core.Timeline | null>(null);
+  const timelineRef = useRef<null | any>(null);
 
   const navItems = [
     { id: 'home', label: 'Home' },
@@ -44,68 +43,54 @@ const Header = () => {
 
   // GSAP Mobile Menu Animation
   useEffect(() => {
-    if (typeof window === 'undefined') return;
+    let isMounted = true;
+    const run = async () => {
+      if (typeof window === 'undefined') return;
+      const { gsap } = await import('gsap');
 
-    // Kill existing timeline if any
-    if (timelineRef.current) {
-      timelineRef.current.kill();
-    }
+      if (!isMounted) return;
 
-    // Create new timeline
-    const tl = gsap.timeline({
-      paused: true,
-      defaults: { ease: 'power3.inOut' }
-    });
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
 
-    if (isMenuOpen) {
-      // Opening animation - Fast and snappy
-      tl.to(overlayRef.current, {
-        opacity: 1,
-        pointerEvents: 'auto',
-        duration: 0.2,
-      })
-      .to(menuContainerRef.current, {
-        x: 0,
-        duration: 0.3,
-      }, '<')
-      .fromTo(
-        menuItemsRef.current,
-        {
-          opacity: 0,
-          x: 30,
-        },
-        {
+      const tl = gsap.timeline({
+        paused: true,
+        defaults: { ease: 'power3.inOut' }
+      });
+
+      if (isMenuOpen) {
+        tl.to(overlayRef.current, {
           opacity: 1,
+          pointerEvents: 'auto',
+          duration: 0.2,
+        })
+        .to(menuContainerRef.current, {
           x: 0,
-          duration: 0.25,
-          stagger: 0.03, // Faster stagger - items appear quickly
-        },
-        '-=0.1'
-      );
-    } else {
-      // Closing animation - Quick
-      tl.to(menuItemsRef.current, {
-        opacity: 0,
-        x: 20,
-        duration: 0.2,
-        stagger: 0.02,
-      })
-      .to(menuContainerRef.current, {
-        x: '100%',
-        duration: 0.3,
-      }, '-=0.1')
-      .to(overlayRef.current, {
-        opacity: 0,
-        pointerEvents: 'none',
-        duration: 0.2,
-      }, '<');
-    }
+          duration: 0.3,
+        }, '<')
+        .fromTo(
+          menuItemsRef.current,
+          { opacity: 0, x: 30 },
+          { opacity: 1, x: 0, duration: 0.25, stagger: 0.03 },
+          '-=0.1'
+        );
+      } else {
+        tl.to(menuItemsRef.current, { opacity: 0, x: 20, duration: 0.2, stagger: 0.02 })
+          .to(menuContainerRef.current, { x: '100%', duration: 0.3 }, '-=0.1')
+          .to(overlayRef.current, { opacity: 0, pointerEvents: 'none', duration: 0.2 }, '<');
+      }
 
-    timelineRef.current = tl;
-    tl.play();
+      timelineRef.current = tl;
+      tl.play();
+    };
 
+    run();
     return () => {
-      tl.kill();
+      isMounted = false;
+      if (timelineRef.current) {
+        timelineRef.current.kill();
+      }
     };
   }, [isMenuOpen]);
 
