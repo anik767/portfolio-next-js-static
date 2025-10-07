@@ -12,7 +12,7 @@ import BackToTopButton from './components/BackToTopButton';
 export default function Home() {
   return (
     <div className="min-h-screen">
-      {/* <Header /> */}
+      <Header />
       <main>
         <Hero />
         <About />

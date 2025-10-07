@@ -15,7 +15,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="about" className="py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Text
@@ -34,7 +34,7 @@ const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left Column - Text Content */}
           <div>
-            <img className="w-full h-[300px] object-contain object-left rounded-2xl shadow-lg mb-8" src="\images\Home\damo.png" alt="Developer Profile" />
+            <img className="w-full h-[450px] object-contain object-center rounded-2xl  shadow-lg mb-8" src="\images\Home\damo.png" alt="Developer Profile" />
             <Text
               variant="h3"
               size="2xl"
@@ -95,7 +95,7 @@ const About = () => {
             </Text>
             <div className="space-y-6">
               {skills.map((skill, index) => (
-                        <Card key={index} variant="default" hover="fade" shadow="md">
+                <Card key={index} variant="default" hover="fade" shadow="md">
                   <div className="flex justify-between items-center mb-3">
                     <Text variant="body" fontFamily="poppins" weight="medium" color="black">
                       {skill.name}
@@ -118,7 +118,7 @@ const About = () => {
 
         {/* Additional Info */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-                  <Card variant="elevated" padding="xl" hover="pulse" shadow="inner" className="text-center">
+          <Card variant="elevated" padding="xl" hover="pulse" shadow="inner" className="text-center">
             <Text variant="h2" size="4xl" fontFamily="rajdhani" gradient="blue" className="mb-3">
               100%
             </Text>
@@ -126,7 +126,7 @@ const About = () => {
               Client Satisfaction
             </Text>
           </Card>
-                  <Card variant="elevated" padding="xl" hover="pulse" shadow="inner" className="text-center">
+          <Card variant="elevated" padding="xl" hover="pulse" shadow="inner" className="text-center">
             <Text variant="h2" size="4xl" fontFamily="rajdhani" gradient="blue" className="mb-3">
               24/7
             </Text>
@@ -134,7 +134,7 @@ const About = () => {
               Support Available
             </Text>
           </Card>
-                  <Card variant="elevated" padding="xl" hover="pulse" shadow="inner" className="text-center">
+          <Card variant="elevated" padding="xl" hover="pulse" shadow="inner" className="text-center">
             <Text variant="h2" size="4xl" fontFamily="rajdhani" gradient="blue" className="mb-3">
               Fast
             </Text>

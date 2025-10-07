@@ -21,7 +21,7 @@ const Card = ({
   padding = 'md',
   shadow
 }: CardProps) => {
-  const baseClasses = "bg-white rounded-xl border border-gray-100 transition-all duration-300";
+  const baseClasses = "bg-white rounded-xl border border-gray-100 transition-all duration-300 shadow-md";
   
   const getShadowClasses = () => {
     if (shadow) {

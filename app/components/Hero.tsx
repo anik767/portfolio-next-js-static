@@ -6,7 +6,7 @@ import { Button, Badge, SocialLink, Text } from './common';
 const Hero = () => {
 
   return (
-    <section id="home" className="min-h-screen flex items-center  relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center relative overflow-hidden bg-[#F4F1EA]">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -35,9 +35,12 @@ const Hero = () => {
               </div>
 
             {/* Main heading with enhanced effects */}
-            <div className="space-y-2">
+            <div className="space-y-0.5">
               <Text variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
-                I AM Jhon Dio
+                I AM
+              </Text>
+              <Text variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
+               Azmain Iqtidar Anik
               </Text>
               <Text 
                 variant="h1" 
@@ -83,21 +86,28 @@ const Hero = () => {
               </Button>
 
               <Button
-                scrollTo="contact"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/damo.pdf';
+                  link.download = 'Azmain Iqtidar Anik.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 variant="outline"
                 size="sm"
                 color="gray"
               >
-                Get In Touch
+                Download Resume
                 <svg className="w-5 h-5 ml-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
               </Button>
             </div>
 
             {/* Social Links */}
             <div className="space-y-6">
-              <Text variant="small" color="muted" weight="medium" className="tracking-wide">
+              <Text variant="caption" color="muted" weight="medium" className="tracking-wide">
                 Find me on
               </Text>
               <div className="flex space-x-6">
@@ -118,7 +128,7 @@ const Hero = () => {
                 {/* Replace this with your actual image */}
                 <img
                   src="/images/Home/damo.png"
-                  alt="Ralph Edwards - Full Stack Web Developer"
+                  alt="Azmain Iqtidar Anik - Full Stack Web Developer"
                   className="w-full h-full object-contain object-center transition-all group-hover:duration-500 ease- group-hover:scale-110"
                 />
 

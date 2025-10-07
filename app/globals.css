@@ -18,13 +18,27 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #F4F1EA;
   }
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+/* GSAP ScrollSmoother */
+#scroll-wrapper {
+  height: 100vh;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+#scroll-content {
+  overflow: visible;
+  width: 100%;
 }
 
 body {
