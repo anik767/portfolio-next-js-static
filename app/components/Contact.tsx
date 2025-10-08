@@ -59,7 +59,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="contact" className="py-20 bg-linear-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="contact-header" className="text-center mb-16">
           <Text 
@@ -73,7 +73,7 @@ const Contact = () => {
           >
             Get In Touch
           </Text>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <Text 
             variant="body" 
             size="lg" 

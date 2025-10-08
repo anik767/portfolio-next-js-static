@@ -70,7 +70,7 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="education" className="py-20 bg-linear-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="education-header" className="text-center mb-16">
           <Text 
@@ -84,7 +84,7 @@ const Education = () => {
           >
             Education & Certifications
           </Text>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <Text 
             variant="body" 
             size="lg" 
@@ -124,7 +124,7 @@ const Education = () => {
                   {/* Left Column - Institution Info */}
                   <div className="lg:col-span-1">
                     <div className="flex items-center mb-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mr-4">
+                      <div className="w-16 h-16 bg-linear-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center text-white font-bold text-xl mr-4">
                         {edu.institution.split(' ').map(word => word.charAt(0)).join('')}
                       </div>
                       <div>
@@ -215,7 +215,7 @@ const Education = () => {
                       <ul className="space-y-1">
                         {edu.achievements.map((achievement, achIndex) => (
                           <li key={achIndex} className="flex items-start">
-                            <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-4 h-4 text-green-500 mr-2 mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                             </svg>
                             <Text variant="small" fontFamily="poppins" color="gray">
@@ -256,7 +256,7 @@ const Education = () => {
                 padding="lg"
               >
                 <div className="flex items-start mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg mr-4 flex-shrink-0">
+                  <div className="w-12 h-12 bg-linear-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-lg mr-4 shrink-0">
                     {cert.issuer.split(' ').map(word => word.charAt(0)).join('')}
                   </div>
                   <div className="flex-1">

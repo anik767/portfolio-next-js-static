@@ -42,8 +42,8 @@ const Button = ({
   };
 
   const variantClasses = {
-    primary: "bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-xl hover:shadow-pink-500/40 transform hover:scale-105 border border-pink-400/20",
-    secondary: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white  shadow-lg hover:shadow-blue-500/40 transform hover:scale-105 border border-blue-400/20",
+    primary: "bg-linear-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-xl hover:shadow-pink-500/40 transform hover:scale-105 border border-pink-400/20",
+    secondary: "bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white  shadow-lg hover:shadow-blue-500/40 transform hover:scale-105 border border-blue-400/20",
     outline: "bg-transparent hover:bg-white/10 border-2"
   };
 

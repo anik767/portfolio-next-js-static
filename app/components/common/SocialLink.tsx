@@ -22,20 +22,20 @@ const SocialLink = ({
   const getPlatformStyles = () => {
     switch (platform) {
       case 'instagram':
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-pink-500 hover:to-purple-600 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-pink-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-pink-500 hover:to-purple-600 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-pink-500/30 backdrop-blur-sm group";
       case 'linkedin':
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-700 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-blue-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-blue-600 hover:to-blue-700 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-blue-500/30 backdrop-blur-sm group";
       case 'twitter':
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-sky-400 hover:to-sky-600 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-sky-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-sky-400 hover:to-sky-600 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-sky-500/30 backdrop-blur-sm group";
       case 'github':
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-800 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-gray-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-gray-600 hover:to-gray-800 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-gray-500/30 backdrop-blur-sm group";
       case 'facebook':
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-blue-600 hover:to-blue-800 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-blue-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-blue-600 hover:to-blue-800 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-blue-500/30 backdrop-blur-sm group";
       case 'youtube':
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-red-500 hover:to-red-700 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-red-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-red-500 hover:to-red-700 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-red-500/30 backdrop-blur-sm group";
       case 'custom':
       default:
-        return "w-14 h-14 bg-gray-800/50 hover:bg-gradient-to-r hover:from-pink-500 hover:to-pink-600 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-pink-500/30 backdrop-blur-sm group";
+        return "w-14 h-14 bg-gray-800/50 hover:bg-linear-to-r hover:from-pink-500 hover:to-pink-600 rounded-2xl flex items-center justify-center transition-all duration-500 ease-out hover:scale-110 hover:shadow-xl hover:shadow-pink-500/30 backdrop-blur-sm group";
     }
   };
 

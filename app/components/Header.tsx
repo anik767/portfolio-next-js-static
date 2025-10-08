@@ -142,7 +142,7 @@ const Header = () => {
         {/* Hamburger Button - Fixed Position */}
         <button
           onClick={toggleMenu}
-          className="fixed top-6 right-6 z-[100] bg-white/80 backdrop-blur-md shadow-lg rounded-full p-3 hover:bg-white transition-all duration-300"
+          className="fixed top-6 right-6 z-100 bg-white/80 backdrop-blur-md shadow-lg rounded-full p-3 hover:bg-white transition-all duration-300"
           aria-label="Toggle menu"
         >
           <div className="w-6 h-5 flex flex-col justify-between">
@@ -167,22 +167,22 @@ const Header = () => {
         {/* Overlay */}
         <div
           ref={overlayRef}
-          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[90] opacity-0 pointer-events-none"
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-90 opacity-0 pointer-events-none"
           onClick={toggleMenu}
         />
 
         {/* Mobile Menu - Slide from Right */}
         <nav
           ref={menuContainerRef}
-          className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-gradient-to-br from-white via-blue-50 to-purple-50 shadow-2xl z-[95] translate-x-full"
+          className="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-linear-to-br from-white via-blue-50 to-purple-50 shadow-2xl z-95 translate-x-full"
         >
           <div className="flex flex-col h-full pt-24 pb-8 px-8">
             {/* Menu Header */}
             <div className="mb-8">
-              <h2 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <h2 className="text-2xl font-bold bg-linear-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Navigation
               </h2>
-              <div className="w-16 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2" />
+              <div className="w-16 h-1 bg-linear-to-r from-blue-600 to-purple-600 rounded-full mt-2" />
             </div>
 
             {/* Menu Items */}
@@ -196,7 +196,7 @@ const Header = () => {
                   onClick={() => scrollToSection(item.id)}
                   className={`w-full text-left px-6 py-4 rounded-2xl font-medium text-lg transition-all duration-300 cursor-pointer ${
                     activeSection === item.id
-                      ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
+                      ? 'bg-linear-to-r from-blue-600 to-purple-600 text-white shadow-lg scale-105'
                       : 'text-gray-700 hover:bg-white/70 hover:shadow-md hover:translate-x-2'
                   }`}
                 >

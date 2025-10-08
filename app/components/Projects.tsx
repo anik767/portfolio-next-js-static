@@ -101,7 +101,7 @@ const Projects = () => {
           >
             My Projects
           </Text>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <Text 
             variant="body" 
             size="lg" 
@@ -135,7 +135,7 @@ const Projects = () => {
                     // Fallback to gradient background if image fails to load
                     e.currentTarget.style.display = 'none';
                     e.currentTarget.parentElement!.innerHTML = `
-                      <div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                      <div class="w-full h-full bg-linear-to-br from-blue-100 to-purple-100 flex items-center justify-center">
                         <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center">
                           <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -214,7 +214,7 @@ const Projects = () => {
                   <ul className="space-y-1">
                     {project.features.slice(0, 3).map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center">
-                        <svg className="w-3 h-3 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <svg className="w-3 h-3 text-green-500 mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                         <Text variant="small" fontFamily="poppins" color="gray">
@@ -276,7 +276,7 @@ const Projects = () => {
         <div className="mt-16 text-center">
           <Card 
             variant="filled" 
-            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0"
+            className="bg-linear-to-r from-purple-600 to-blue-600 text-white border-0"
             padding="xl"
           >
             <Text 

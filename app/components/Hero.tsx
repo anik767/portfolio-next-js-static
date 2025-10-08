@@ -16,8 +16,8 @@ const Hero = () => {
       />
 
       {/* Enhanced Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-800/80 to-gray-900 z-10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40 z-20"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-gray-900/90 via-gray-800/80 to-gray-900 z-10"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-black/60 via-transparent to-black/40 z-20"></div>
 
       {/* Animated Background Elements */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-pink-500/10 rounded-full blur-3xl z-5"></div>
@@ -138,9 +138,9 @@ const Hero = () => {
                 />
 
                 {/* Enhanced Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
-                <div className="gsap-parallax-bg absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-pink-500/40 to-pink-600/20 rounded-full opacity-70 transform translate-x-24 translate-y-24 blur-3xl"></div>
-                <div className="gsap-parallax-bg absolute top-0 left-0 w-64 h-64 bg-gradient-to-br from-blue-500/20 to-purple-500/20 rounded-full opacity-50 transform -translate-x-16 -translate-y-16 blur-2xl"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-black/20 via-transparent to-transparent"></div>
+                <div className="gsap-parallax-bg absolute bottom-0 right-0 w-96 h-96 bg-linear-to-tl from-pink-500/40 to-pink-600/20 rounded-full opacity-70 transform translate-x-24 translate-y-24 blur-3xl"></div>
+                <div className="gsap-parallax-bg absolute top-0 left-0 w-64 h-64 bg-linear-to-br from-blue-500/20 to-purple-500/20 rounded-full opacity-50 transform -translate-x-16 -translate-y-16 blur-2xl"></div>
               </div>
 
               {/* Enhanced Floating Elements */}
@@ -151,7 +151,7 @@ const Hero = () => {
               {/* Experience Badge */}
               <div className="absolute -bottom-8 left-[50%] translate-x-[-50%] bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-pink-200/50">
                 <div className="flex items-center space-x-3">
-                  <div className="w-4 h-4 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full"></div>
+                  <div className="w-4 h-4 bg-linear-to-r from-pink-500 to-pink-600 rounded-full"></div>
                   <span className="text-gray-900 font-bold text-sm">2+ Years Experience</span>
                 </div>
               </div>

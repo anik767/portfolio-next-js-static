@@ -28,7 +28,7 @@ const About = () => {
           >
             About Me
           </Text>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto rounded-full"></div>
         </div>
 
         {/* Image and Content Side by Side */}
@@ -116,7 +116,7 @@ const About = () => {
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
                   <div
-                    className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-1000 ease-out"
+                    className="bg-linear-to-r from-blue-500 to-purple-600 h-3 rounded-full transition-all duration-1000 ease-out"
                     style={{ width: `${skill.level}%` }}
                   ></div>
                 </div>

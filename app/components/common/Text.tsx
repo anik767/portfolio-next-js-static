@@ -97,26 +97,26 @@ const Text = ({
   } as const;
 
   const gradientClasses = {
-    pink: 'bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600',
-    blue: 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600',
-    purple: 'bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600',
-    green: 'bg-gradient-to-r from-green-400 via-green-500 to-green-600',
-    orange: 'bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600',
-    red: 'bg-gradient-to-r from-red-400 via-red-500 to-red-600',
-    cyan: 'bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600',
-    yellow: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600',
+    pink: 'bg-linear-to-r from-pink-400 via-pink-500 to-pink-600',
+    blue: 'bg-linear-to-r from-blue-400 via-blue-500 to-blue-600',
+    purple: 'bg-linear-to-r from-purple-400 via-purple-500 to-purple-600',
+    green: 'bg-linear-to-r from-green-400 via-green-500 to-green-600',
+    orange: 'bg-linear-to-r from-orange-400 via-orange-500 to-orange-600',
+    red: 'bg-linear-to-r from-red-400 via-red-500 to-red-600',
+    cyan: 'bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600',
+    yellow: 'bg-linear-to-r from-yellow-400 via-yellow-500 to-yellow-600',
     custom: ''
   } as const;
 
   const gradientDirectionClasses = {
-    'to-r': 'bg-gradient-to-r',
-    'to-l': 'bg-gradient-to-l',
-    'to-t': 'bg-gradient-to-t',
-    'to-b': 'bg-gradient-to-b',
-    'to-tr': 'bg-gradient-to-tr',
-    'to-tl': 'bg-gradient-to-tl',
-    'to-br': 'bg-gradient-to-br',
-    'to-bl': 'bg-gradient-to-bl'
+    'to-r': 'bg-linear-to-r',
+    'to-l': 'bg-linear-to-l',
+    'to-t': 'bg-linear-to-t',
+    'to-b': 'bg-linear-to-b',
+    'to-tr': 'bg-linear-to-tr',
+    'to-tl': 'bg-linear-to-tl',
+    'to-br': 'bg-linear-to-br',
+    'to-bl': 'bg-linear-to-bl'
   } as const;
 
   const alignClasses = {
