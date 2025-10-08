@@ -6,7 +6,7 @@ interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
   scrollTo?: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'success';
   size?: 'sm' | 'md' | 'lg';
   Align?: 'left' | 'center' | 'right';
   color?: 'blue' | 'white' | 'pink' | 'purple' | 'gray' | 'black' | 'green' | 'red' | 'yellow' | 'indigo' | 'cyan';
@@ -42,9 +42,36 @@ const Button = ({
   };
 
   const variantClasses = {
-    primary: "bg-linear-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-xl hover:shadow-pink-500/40 transform hover:scale-105 border border-pink-400/20",
-    secondary: "bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white  shadow-lg hover:shadow-blue-500/40 transform hover:scale-105 border border-blue-400/20",
+    primary: "shadow-lg hover:shadow-xl transform hover:scale-105 border-2",    // Blue Sky theme
+    secondary: "shadow-lg hover:shadow-xl transform hover:scale-105 border-2",  // Warm Sunset (Yellow) theme
+    success: "shadow-lg hover:shadow-xl transform hover:scale-105 border-2",    // Fresh Green theme
     outline: "bg-transparent hover:bg-white/10 border-2"
+  };
+  
+  // Get theme color style
+  const getThemeStyle = (variant: string) => {
+    switch(variant) {
+      case 'primary':
+        return { 
+          backgroundColor: '#b9dcff',  // Blue Sky
+          color: '#070f36',
+          borderColor: '#8dc9f4'
+        };
+      case 'secondary':
+        return { 
+          backgroundColor: '#fff58c',  // Warm Sunset (Yellow)
+          color: '#9c4e23',
+          borderColor: '#9c4e23'
+        };
+      case 'success':
+        return { 
+          backgroundColor: '#c4ffb2',  // Fresh Green
+          color: '#164c3b',
+          borderColor: '#164c3b'
+        };
+      default:
+        return {};
+    }
   };
 
   // Tailwind-safe explicit color classes for outline variant
@@ -78,12 +105,15 @@ const Button = ({
     }
   };
 
+  const themeStyle = getThemeStyle(variant);
+  
   return (
     <button
       type={type}
       onClick={handleClick}
       disabled={disabled}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${variant === 'outline' ? outlineColorClasses[color] : ''} ${AlignClasses[Align as keyof typeof AlignClasses]} ${disabledClasses} ${className}`}
+      style={themeStyle}
     >
       {children}
     </button>

@@ -97,8 +97,8 @@ const Text = ({
   } as const;
 
   const gradientClasses = {
-    pink: 'bg-linear-to-r from-pink-400 via-pink-500 to-pink-600',
-    blue: 'bg-linear-to-r from-blue-400 via-blue-500 to-blue-600',
+    pink: '',     // Fresh Green theme - will use inline style
+    blue: '',     // Warm Sunset (Yellow) theme - will use inline style  
     purple: 'bg-linear-to-r from-purple-400 via-purple-500 to-purple-600',
     green: 'bg-linear-to-r from-green-400 via-green-500 to-green-600',
     orange: 'bg-linear-to-r from-orange-400 via-orange-500 to-orange-600',
@@ -136,6 +136,23 @@ const Text = ({
 
   const baseClasses = "transition-colors duration-200";
   
+  // Get theme gradient style
+  const getThemeGradientStyle = () => {
+    if (gradient === 'pink') return { 
+      background: 'linear-gradient(to right, #c4ffb2, #164c3b)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    };
+    if (gradient === 'blue') return { 
+      background: 'linear-gradient(to right, #fff58c, #9c4e23)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    };
+    return {};
+  };
+  
   // Determine if we should use gradient or solid color
   const isGradient = gradient && gradient !== 'custom';
   const gradientClass = isGradient ? gradientClasses[gradient as keyof typeof gradientClasses] : '';
@@ -145,9 +162,12 @@ const Text = ({
   const finalClassName = `${baseClasses} ${sizeClasses[finalSize as keyof typeof sizeClasses]} ${weightClasses[finalWeight as keyof typeof weightClasses]} ${colorClass} ${alignClasses[align]} ${fontFamilyClasses[fontFamily]} ${className}`;
   
   const gradientClassName = isGradient ? `${directionClass} ${gradientClass} bg-clip-text text-transparent` : '';
+  
+  const themeGradientStyle = getThemeGradientStyle();
+  const combinedStyle = { ...style, ...themeGradientStyle };
 
   return (
-    <Component id={id} className={`${finalClassName} ${gradientClassName}`} style={style}>
+    <Component id={id} className={`${finalClassName} ${gradientClassName}`} style={combinedStyle}>
       {children}
     </Component>
   );

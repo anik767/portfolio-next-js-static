@@ -440,7 +440,7 @@ const ScrollAnimations = () => {
 
         // CONTACT SECTION - Cards appear one by one
         slideFromBottom('#contact-header', '#contact');
-        rotateIn('#contact-content .contact-card', '#contact', 0.3); // Increased stagger
+        bounceIn('#contact-content .contact-card', '#contact', 0.3); // Increased stagger
 
         // FOOTER SECTION - Footer content slides up
         slideFromBottom('#footer .footer-content', '#footer', 0.2);

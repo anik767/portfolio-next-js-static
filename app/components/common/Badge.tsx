@@ -24,15 +24,39 @@ const Badge = ({
   };
 
   const variantClasses = {
-    primary: "text-pink-400 bg-pink-500/10 border-pink-500/20",
-    secondary: "text-blue-400 bg-blue-500/10 border-blue-500/20",
-    success: "text-green-400 bg-green-500/10 border-green-500/20",
+    primary: "border-[#164c3b]/30",     // Fresh Green theme
+    secondary: "border-[#9c4e23]/30",   // Warm Sunset (Yellow) theme
+    success: "border-[#9c4e23]/30",     // Warm Sunset (Yellow) theme
     warning: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20",
     info: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20"
   };
+  
+  // Get theme color style
+  const getThemeStyle = (variant: string) => {
+    switch(variant) {
+      case 'primary':
+        return { 
+          backgroundColor: '#c4ffb240', 
+          color: '#164c3b' 
+        };
+      case 'secondary':
+      case 'success':
+        return { 
+          backgroundColor: '#fff58c40', 
+          color: '#9c4e23' 
+        };
+      default:
+        return {};
+    }
+  };
 
+  const themeStyle = getThemeStyle(variant);
+  
   return (
-    <span className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}>
+    <span 
+      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
+      style={themeStyle}
+    >
       {children}
     </span>
   );
