@@ -311,7 +311,7 @@ const Education = () => {
                   </Text>
                   <div className="flex flex-wrap gap-1">
                     {cert.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="info" size="sm">
+                      <Badge key={skillIndex} variant="secondary" size="sm">
                         {skill}
                       </Badge>
                     ))}

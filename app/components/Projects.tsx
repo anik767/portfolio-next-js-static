@@ -1,8 +1,10 @@
 'use client';
 
+import { useState } from 'react';
 import { Text, Card, Badge, Button } from './common';
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
   const projects = [
     {
       title: 'E-Commerce Platform',
@@ -114,11 +116,11 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div id="projects-content" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+          {(showAll ? projects : projects.slice(0, 2)).map((project, index) => (
             <Card
               key={index}
               variant="elevated"
-              hover="scale"
+              hover="slide"
               shadow="2xl"
               className="group overflow-hidden project-card"
               padding="none"
@@ -256,6 +258,18 @@ const Projects = () => {
               </div>
             </Card>
           ))}
+        </div>
+
+        {/* View All / Show Less Button */}
+        <div className="mt-12 flex justify-center">
+          <Button
+            onClick={() => setShowAll(!showAll)}
+            variant="secondary"
+            size="md"
+            color="blue"
+          >
+            {showAll ? 'Show Less' : `View All ${projects.length} Projects`}
+          </Button>
         </div>
 
         {/* CTA Section */}

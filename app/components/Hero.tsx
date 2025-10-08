@@ -16,7 +16,7 @@ const Hero = () => {
       />
 
       {/* Enhanced Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-900/90 via-gray-800/80 to-gray-900/90 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-900/90 via-gray-800/80 to-gray-900 z-10"></div>
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-black/40 z-20"></div>
 
       {/* Animated Background Elements */}
@@ -35,7 +35,7 @@ const Hero = () => {
               </div>
 
             {/* Main heading with enhanced effects */}
-            <div className="space-y-0.5">
+            <div className="space-y-0.5 ">
               <Text id="hero-i-am" variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
                 I AM
               </Text>
@@ -46,12 +46,15 @@ const Hero = () => {
                 id="hero-title"
                 variant="h1" 
                 size="4xl" 
-                gradient="blue"
                 gradientDirection="to-r"
                 fontFamily="rajdhani"
-                className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl"
+                className="md:text-5xl lg:text-7xl"
+                style={{
+                  WebkitTextStroke: '.8px gray',
+                  WebkitTextFillColor: 'transparent',
+                }}
               >
-                Web Developer.
+                Web Developer
               </Text>
             </div>
 
@@ -109,13 +112,14 @@ const Hero = () => {
             {/* Social Links */}
             <div className="space-y-6">
               <Text variant="caption" color="muted" weight="medium" className="tracking-wide">
-                Find me on
+                Find me on:
               </Text>
               <div id="hero-social-links" className="flex space-x-6">
-                <SocialLink href="https://instagram.com" platform="instagram" className="hero-social-item" />
-                <SocialLink href="https://linkedin.com" platform="linkedin" className="hero-social-item" />
+                <SocialLink href="https://www.facebook.com/azmainiqtidaranik" platform="facebook" className="hero-social-item" />
+                <SocialLink href="https://www.instagram.com/anikazmain535" platform="instagram" className="hero-social-item" />
+                <SocialLink href="https://www.linkedin.com/in/anik-azmain" platform="linkedin" className="hero-social-item" />
                 <SocialLink href="https://twitter.com" platform="twitter" className="hero-social-item" />
-                <SocialLink href="https://github.com" platform="github" className="hero-social-item" />
+                <SocialLink href="https://github.com/anik767" platform="github" className="hero-social-item" />
               </div>
             </div>
           </div>
@@ -145,7 +149,7 @@ const Hero = () => {
               <div className="absolute top-1/2 -right-8 w-16 h-16 bg-blue-500/20 rounded-full blur-lg transition-all duration-1000 ease-in-out"></div>
 
               {/* Experience Badge */}
-              <div className="absolute bottom-8 right-8 bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-pink-200/50">
+              <div className="absolute -bottom-8 left-[50%] translate-x-[-50%] bg-white/95 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-pink-200/50">
                 <div className="flex items-center space-x-3">
                   <div className="w-4 h-4 bg-gradient-to-r from-pink-500 to-pink-600 rounded-full"></div>
                   <span className="text-gray-900 font-bold text-sm">2+ Years Experience</span>

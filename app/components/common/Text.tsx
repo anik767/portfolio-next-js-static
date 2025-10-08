@@ -15,6 +15,7 @@ interface TextProps {
   className?: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
   id?: string;
+  style?: React.CSSProperties;
 }
 
 const Text = ({ 
@@ -29,7 +30,8 @@ const Text = ({
   align = 'left',
   className = '',
   as,
-  id
+  id,
+  style
 }: TextProps) => {
   // Default size mapping based on variant
   const defaultSizes = {
@@ -145,7 +147,7 @@ const Text = ({
   const gradientClassName = isGradient ? `${directionClass} ${gradientClass} bg-clip-text text-transparent` : '';
 
   return (
-    <Component id={id} className={`${finalClassName} ${gradientClassName}`}>
+    <Component id={id} className={`${finalClassName} ${gradientClassName}`} style={style}>
       {children}
     </Component>
   );
