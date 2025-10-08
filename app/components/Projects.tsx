@@ -7,68 +7,80 @@ const Projects = () => {
     {
       title: 'E-Commerce Platform',
       description: 'A full-stack e-commerce solution with modern features including real-time inventory management, payment processing, and admin dashboard.',
-      image: '/images/projects/ecommerce.jpg',
+      image: '/images/example.png',
       technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
       features: ['User Authentication', 'Payment Processing', 'Admin Dashboard', 'Real-time Updates', 'Mobile Responsive'],
       liveUrl: 'https://ecommerce-demo.com',
       githubUrl: 'https://github.com/username/ecommerce',
       status: 'Live',
-      category: 'Full Stack'
+      statusVariant: 'success',
+      category: 'Full Stack',
+      categoryVariant: 'primary'
     },
     {
       title: 'Task Management App',
       description: 'A collaborative task management application with team features, real-time updates, and project tracking capabilities.',
-      image: '/images/projects/taskmanager.jpg',
+      image: '/images/confurm.png',
       technologies: ['Vue.js', 'Express.js', 'PostgreSQL', 'Socket.io', 'Docker'],
       features: ['Team Collaboration', 'Real-time Updates', 'File Sharing', 'Progress Tracking', 'Notifications'],
       liveUrl: 'https://taskmanager-demo.com',
       githubUrl: 'https://github.com/username/taskmanager',
-      status: 'Live',
-      category: 'Web App'
+      status: 'In Progress',
+      statusVariant: 'warning',
+      category: 'Web App',
+      categoryVariant: 'secondary'
     },
     {
       title: 'Weather Dashboard',
       description: 'A responsive weather application with location-based forecasts, interactive maps, and detailed weather analytics.',
-      image: '/images/projects/weather.jpg',
+      image: '/images/Round_effects.jpg',
       technologies: ['React', 'TypeScript', 'Chart.js', 'OpenWeather API', 'Tailwind CSS'],
       features: ['Location-based Forecast', 'Interactive Maps', 'Weather Charts', '7-day Forecast', 'Mobile App'],
       liveUrl: 'https://weather-demo.com',
       githubUrl: 'https://github.com/username/weather',
       status: 'Live',
-      category: 'Frontend'
+      statusVariant: 'success',
+      category: 'Frontend',
+      categoryVariant: 'info'
     },
     {
       title: 'Blog CMS',
       description: 'A content management system for bloggers with markdown support, SEO optimization, and analytics dashboard.',
-      image: '/images/projects/blog.jpg',
+      image: '/images/Image_not_found.jpg',
       technologies: ['Next.js', 'Prisma', 'MySQL', 'Vercel', 'Cloudinary'],
       features: ['Markdown Editor', 'SEO Optimization', 'Analytics Dashboard', 'Comment System', 'Multi-author Support'],
       liveUrl: 'https://blog-cms-demo.com',
       githubUrl: 'https://github.com/username/blog-cms',
-      status: 'Live',
-      category: 'CMS'
+      status: 'Coming Soon',
+      statusVariant: 'info',
+      category: 'CMS',
+      categoryVariant: 'warning'
     },
     {
       title: 'Portfolio Website',
       description: 'A modern, responsive portfolio website showcasing projects, skills, and professional experience.',
-      image: '/images/projects/portfolio.jpg',
+      image: '/images/Home/banner-background-one.jpg',
       technologies: ['Next.js', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vercel'],
       features: ['Responsive Design', 'Smooth Animations', 'Contact Form', 'Project Showcase', 'SEO Optimized'],
       liveUrl: 'https://portfolio-demo.com',
       githubUrl: 'https://github.com/username/portfolio',
       status: 'Live',
-      category: 'Portfolio'
+      statusVariant: 'success',
+      category: 'Portfolio',
+      categoryVariant: 'primary'
     },
     {
       title: 'API Integration Tool',
       description: 'A developer tool for testing and documenting REST APIs with interactive documentation and testing capabilities.',
-      image: '/images/projects/api-tool.jpg',
+      image: '/images/404.gif',
       technologies: ['React', 'Node.js', 'Swagger', 'Jest', 'Docker'],
       features: ['API Testing', 'Interactive Docs', 'Request Builder', 'Response Validation', 'Team Sharing'],
       liveUrl: 'https://api-tool-demo.com',
       githubUrl: 'https://github.com/username/api-tool',
-      status: 'Live',
-      category: 'Developer Tool'
+      status: 'Beta',
+      statusVariant: 'secondary',
+      category: 'Developer Tool',
+      categoryVariant: 'info'
     }
   ];
 
@@ -101,7 +113,7 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div id="projects-content" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div id="projects-content" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card
               key={index}
@@ -112,22 +124,33 @@ const Projects = () => {
               padding="none"
             >
               {/* Project Image */}
-              <div className="relative h-48 bg-gradient-to-br from-blue-100 to-purple-100 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                    </svg>
-                  </div>
-                </div>
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={project.image} 
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    // Fallback to gradient background if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.parentElement!.innerHTML = `
+                      <div class="w-full h-full bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+                        <div class="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center">
+                          <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                          </svg>
+                        </div>
+                      </div>
+                    `;
+                  }}
+                />
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300"></div>
                 <div className="absolute top-4 right-4">
-                  <Badge variant="success" size="sm">
+                  <Badge variant={project.statusVariant as any} size="sm">
                     {project.status}
                   </Badge>
                 </div>
                 <div className="absolute top-4 left-4">
-                  <Badge variant="info" size="sm">
+                  <Badge variant={project.categoryVariant as any} size="sm">
                     {project.category}
                   </Badge>
                 </div>
