@@ -30,36 +30,7 @@ const Footer = () => {
     }
   };
 
-  // GSAP Footer Animation
-  useEffect(() => {
-    const animateFooter = async () => {
-      if (footerRef.current) {
-        const { gsap } = await import('gsap');
-        const { ScrollTrigger } = await import('gsap/ScrollTrigger');
-        
-        gsap.registerPlugin(ScrollTrigger);
-
-        gsap.fromTo(
-          footerRef.current.children,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            stagger: 0.2,
-            ease: 'power2.out',
-            scrollTrigger: {
-              trigger: footerRef.current,
-              start: 'top 90%',
-              toggleActions: 'play none none reverse',
-            }
-          }
-        );
-      }
-    };
-
-    animateFooter();
-  }, []);
+  // Footer animation is handled by ScrollAnimations component
 
   return (
     <footer id="footer" className="bg-gray-900 text-white">

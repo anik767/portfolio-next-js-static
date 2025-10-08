@@ -6,46 +6,15 @@ const ScrollAnimations = () => {
   useEffect(() => {
     const initScrollAnimations = async () => {
       if (typeof window !== 'undefined') {
+        // Check if device is mobile or tablet (consistent with GSAPScrollWrapper)
+        const isMobile = window.innerWidth <= 768; // Mobile devices
+        const isTablet = window.innerWidth > 768 && window.innerWidth <= 1024; // Tablet devices
+        
         const { gsap } = await import('gsap');
         const { ScrollTrigger } = await import('gsap/ScrollTrigger');
         
         // Register ScrollTrigger
         gsap.registerPlugin(ScrollTrigger);
-
-        // Wait for ScrollSmoother to be ready (if available)
-        try {
-          const { ScrollSmoother } = await import('gsap/ScrollSmoother');
-          let smoother = ScrollSmoother.get();
-          let attempts = 0;
-          
-          while (!smoother && attempts < 30) {
-            await new Promise(resolve => setTimeout(resolve, 100));
-            smoother = ScrollSmoother.get();
-            attempts++;
-          }
-          
-          if (smoother) {
-            console.log('✅ ScrollSmoother detected, animations will work with it');
-          }
-        } catch (error) {
-          console.log('ScrollSmoother not available, using standard ScrollTrigger');
-        }
-
-        // Additional delay to ensure everything is ready
-        await new Promise(resolve => setTimeout(resolve, 200));
-
-        // Configure ScrollTrigger
-        ScrollTrigger.config({
-          ignoreMobileResize: true,
-        });
-
-        console.log('ScrollTrigger animations initialized');
-
-        // ===== RULES =====
-        // 1. NEVER use Tailwind classes in GSAP animations (e.g., .text-center, .grid)
-        // 2. ONLY use IDs and custom classes (e.g., #about-header, .service-card)
-        // 3. Each section must have unique IDs for headers and content
-        // 4. Use descriptive custom class names for repeated elements (e.g., .service-card, .project-card)
 
         // ===== REUSABLE ANIMATION FUNCTIONS =====
         
@@ -133,6 +102,55 @@ const ScrollAnimations = () => {
             }
           );
         };
+
+        // Wait for ScrollSmoother to be ready FIRST (if available)
+        try {
+          const { ScrollSmoother } = await import('gsap/ScrollSmoother');
+          let smoother = ScrollSmoother.get();
+          let attempts = 0;
+          
+          while (!smoother && attempts < 30) {
+            await new Promise(resolve => setTimeout(resolve, 100));
+            smoother = ScrollSmoother.get();
+            attempts++;
+          }
+          
+        } catch (error) {
+          // ScrollSmoother not available, using standard ScrollTrigger
+        }
+
+        // Additional delay to ensure everything is ready
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        // HERO SECTION - Always animate on ALL devices (mobile, tablet, desktop)
+        fadeInDown('#hero-greeting', 0.2);
+        slideInFromLeft('#hero-i-am', 0.2);
+        zoomInBounce('#hero-name', 0.2);
+        slideInFromRight('#hero-title', .3);
+        fadeInUp('#hero-buttons', .7);
+        bounceInStagger('#hero-social-links .hero-social-item', .1, 0.15);
+
+        // Check if device is mobile or tablet
+        const isMobileDevice = window.innerWidth <= 768; // Mobile devices
+        const isTabletDevice = window.innerWidth > 768 && window.innerWidth <= 1024; // Tablet devices
+        
+        if (isMobileDevice || isTabletDevice) {
+          // ScrollSmoother will work, Hero animations work, but no other animations on mobile/tablet for performance
+          return;
+        }
+
+        // Configure ScrollTrigger
+        ScrollTrigger.config({
+          ignoreMobileResize: true,
+        });
+
+
+        // ===== RULES =====
+        // 1. NEVER use Tailwind classes in GSAP animations (e.g., .text-center, .grid)
+        // 2. ONLY use IDs and custom classes (e.g., #about-header, .service-card)
+        // 3. Each section must have unique IDs for headers and content
+        // 4. Use descriptive custom class names for repeated elements (e.g., .service-card, .project-card)
+
 
         // ScrollTrigger animations
         const slideFromLeft = (selector: string, trigger: string, delay: number = 0) => {
@@ -398,13 +416,6 @@ const ScrollAnimations = () => {
 
         // ===== SECTION ANIMATIONS =====
 
-        // HERO SECTION - Just add IDs and use animation functions
-        fadeInDown('#hero-greeting', 0.2);
-        slideInFromLeft('#hero-i-am', 0.2);
-        zoomInBounce('#hero-name', 0.2);
-        slideInFromRight('#hero-title', .3);
-        fadeInUp('#hero-buttons', .7);
-        bounceInStagger('#hero-social-links .hero-social-item', .1, 0.15);
 
         // ABOUT SECTION - Grid skills appear one by one
         slideFromBottom('#about-header', '#about');
@@ -430,6 +441,9 @@ const ScrollAnimations = () => {
         // CONTACT SECTION - Cards appear one by one
         slideFromBottom('#contact-header', '#contact');
         rotateIn('#contact-content .contact-card', '#contact', 0.3); // Increased stagger
+
+        // FOOTER SECTION - Footer content slides up
+        slideFromBottom('#footer .footer-content', '#footer', 0.2);
 
         // Parallax Effect for Background Elements
         gsap.utils.toArray('.gsap-parallax-bg').forEach((element: any) => {
