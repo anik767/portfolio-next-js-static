@@ -145,6 +145,7 @@ const Text = ({
       WebkitTextFillColor: 'transparent',
       backgroundClip: 'text'
     };
+    
     if (gradient === 'blue') return { 
       background: 'linear-gradient(to right, #fff58c, #9c4e23)',
       WebkitBackgroundClip: 'text',
