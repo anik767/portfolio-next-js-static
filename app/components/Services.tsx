@@ -67,7 +67,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+    <section id="services" className="py-20 bg-linear-to-br from-gray-50 to-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div id="services-header" className="text-center mb-16">
           <Text 
@@ -81,7 +81,7 @@ const Services = () => {
           >
             My Services
           </Text>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-linear-to-r from-blue-500 to-purple-600 mx-auto mb-6 rounded-full"></div>
           <Text 
             variant="body" 
             size="lg" 
@@ -129,7 +129,7 @@ const Services = () => {
               <ul className="space-y-2">
                 {service.features.map((feature, featureIndex) => (
                   <li key={featureIndex} className="flex items-center">
-                    <svg className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 text-green-500 mr-2 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <Text variant="small" fontFamily="poppins" color="gray">
@@ -146,7 +146,7 @@ const Services = () => {
         <div className="mt-16 text-center">
           <Card 
             variant="filled" 
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white border-0"
+            className="bg-linear-to-r from-blue-600 to-purple-600 text-white border-0"
             padding="xl"
           >
             <Text 

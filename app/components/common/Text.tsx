@@ -7,7 +7,7 @@ interface TextProps {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'caption' | 'small';
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
   weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
-  color?: 'primary' | 'secondary' | 'pink' | 'muted' | 'white' | 'black' | 'gray';
+  color?: 'primary' | 'secondary' | 'accent' | 'pink' | 'muted' | 'white' | 'black' | 'gray';
   gradient?: 'pink' | 'blue' | 'purple' | 'green' | 'orange' | 'red' | 'cyan' | 'yellow' | 'custom';
   gradientDirection?: 'to-r' | 'to-l' | 'to-t' | 'to-b' | 'to-tr' | 'to-tl' | 'to-br' | 'to-bl';
   fontFamily?: 'sans' | 'poppins' | 'playfair' | 'rajdhani' | 'mono';
@@ -15,6 +15,7 @@ interface TextProps {
   className?: string;
   as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
   id?: string;
+  style?: React.CSSProperties;
 }
 
 const Text = ({ 
@@ -29,7 +30,8 @@ const Text = ({
   align = 'left',
   className = '',
   as,
-  id
+  id,
+  style
 }: TextProps) => {
   // Default size mapping based on variant
   const defaultSizes = {
@@ -88,6 +90,7 @@ const Text = ({
     primary: 'text-white',
     secondary: 'text-gray-300',
     pink: 'text-pink-400',
+    accent: 'text-[#59C378]',
     muted: 'text-gray-400',
     white: 'text-white',
     black: 'text-black',
@@ -95,26 +98,26 @@ const Text = ({
   } as const;
 
   const gradientClasses = {
-    pink: 'bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600',
-    blue: 'bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600',
-    purple: 'bg-gradient-to-r from-purple-400 via-purple-500 to-purple-600',
-    green: 'bg-gradient-to-r from-green-400 via-green-500 to-green-600',
-    orange: 'bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600',
-    red: 'bg-gradient-to-r from-red-400 via-red-500 to-red-600',
-    cyan: 'bg-gradient-to-r from-cyan-400 via-cyan-500 to-cyan-600',
-    yellow: 'bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600',
+    pink: '',     // Fresh Green theme - will use inline style
+    blue: '',     // Warm Sunset (Yellow) theme - will use inline style  
+    purple: 'bg-linear-to-r from-purple-400 via-purple-500 to-purple-600',
+    green: 'bg-linear-to-r from-green-400 via-green-500 to-green-600',
+    orange: 'bg-linear-to-r from-orange-400 via-orange-500 to-orange-600',
+    red: 'bg-linear-to-r from-red-400 via-red-500 to-red-600',
+    cyan: 'bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600',
+    yellow: 'bg-linear-to-r from-yellow-400 via-yellow-500 to-yellow-600',
     custom: ''
   } as const;
 
   const gradientDirectionClasses = {
-    'to-r': 'bg-gradient-to-r',
-    'to-l': 'bg-gradient-to-l',
-    'to-t': 'bg-gradient-to-t',
-    'to-b': 'bg-gradient-to-b',
-    'to-tr': 'bg-gradient-to-tr',
-    'to-tl': 'bg-gradient-to-tl',
-    'to-br': 'bg-gradient-to-br',
-    'to-bl': 'bg-gradient-to-bl'
+    'to-r': 'bg-linear-to-r',
+    'to-l': 'bg-linear-to-l',
+    'to-t': 'bg-linear-to-t',
+    'to-b': 'bg-linear-to-b',
+    'to-tr': 'bg-linear-to-tr',
+    'to-tl': 'bg-linear-to-tl',
+    'to-br': 'bg-linear-to-br',
+    'to-bl': 'bg-linear-to-bl'
   } as const;
 
   const alignClasses = {
@@ -134,6 +137,24 @@ const Text = ({
 
   const baseClasses = "transition-colors duration-200";
   
+  // Get theme gradient style
+  const getThemeGradientStyle = () => {
+    if (gradient === 'pink') return { 
+      background: 'linear-gradient(to right, #c4ffb2, #164c3b)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    };
+    
+    if (gradient === 'blue') return { 
+      background: 'linear-gradient(to right, #fff58c, #9c4e23)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text'
+    };
+    return {};
+  };
+  
   // Determine if we should use gradient or solid color
   const isGradient = gradient && gradient !== 'custom';
   const gradientClass = isGradient ? gradientClasses[gradient as keyof typeof gradientClasses] : '';
@@ -143,9 +164,12 @@ const Text = ({
   const finalClassName = `${baseClasses} ${sizeClasses[finalSize as keyof typeof sizeClasses]} ${weightClasses[finalWeight as keyof typeof weightClasses]} ${colorClass} ${alignClasses[align]} ${fontFamilyClasses[fontFamily]} ${className}`;
   
   const gradientClassName = isGradient ? `${directionClass} ${gradientClass} bg-clip-text text-transparent` : '';
+  
+  const themeGradientStyle = getThemeGradientStyle();
+  const combinedStyle = { ...style, ...themeGradientStyle };
 
   return (
-    <Component id={id} className={`${finalClassName} ${gradientClassName}`}>
+    <Component id={id} className={`${finalClassName} ${gradientClassName}`} style={combinedStyle}>
       {children}
     </Component>
   );

@@ -6,7 +6,7 @@ interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
   scrollTo?: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'success' | 'warning' | 'info' | 'accent';
   size?: 'sm' | 'md' | 'lg';
   Align?: 'left' | 'center' | 'right';
   color?: 'blue' | 'white' | 'pink' | 'purple' | 'gray' | 'black' | 'green' | 'red' | 'yellow' | 'indigo' | 'cyan';
@@ -33,7 +33,7 @@ const Button = ({
     right: "justify-end"
   };
 
-  const baseClasses = "font-bold rounded-full transition-all duration-500 ease-out flex  items-center group text-lg backdrop-blur-sm cursor-pointer";
+  const baseClasses = "font-bold rounded-full transition-all duration-500 ease-out flex items-center group text-lg backdrop-blur-sm cursor-pointer";
   
   const sizeClasses = {
     sm: "py-3 px-5 text-sm",
@@ -42,11 +42,15 @@ const Button = ({
   };
 
   const variantClasses = {
-    primary: "bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700 text-white shadow-xl hover:shadow-pink-500/40 transform hover:scale-105 border border-pink-400/20",
-    secondary: "bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white  shadow-lg hover:shadow-blue-500/40 transform hover:scale-105 border border-blue-400/20",
-    outline: "bg-transparent hover:bg-white/10 border-2"
+    primary: "bg-blue-500/10 text-blue-500 border-blue-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",    // Blue Sky theme
+    secondary: "bg-violet-500/10 text-violet-500 border-violet-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",  // Warm Sunset (Yellow) theme
+    success: "bg-emerald-500/10 text-emerald-500 border-emerald-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",    // Fresh Green theme
+    outline: "bg-transparent hover:bg-white/10 border-2",
+    warning: "bg-rose-500/10 text-rose-500 border-rose-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",
+    info: "bg-gray-500/10 text-gray-500 border-gray-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",
+    accent: "bg-orange-400/10 text-orange-400 border-orange-300/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2"
   };
-
+  
   // Tailwind-safe explicit color classes for outline variant
   const outlineColorClasses: Record<NonNullable<ButtonProps['color']>, string> = {
     blue:   "text-blue-500 border-blue-400/50 hover:border-blue-500",
@@ -78,12 +82,15 @@ const Button = ({
     }
   };
 
+
+  
   return (
     <button
       type={type}
       onClick={handleClick}
       disabled={disabled}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${variant === 'outline' ? outlineColorClasses[color] : ''} ${AlignClasses[Align as keyof typeof AlignClasses]} ${disabledClasses} ${className}`}
+    
     >
       {children}
     </button>

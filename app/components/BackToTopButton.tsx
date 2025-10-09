@@ -72,7 +72,7 @@ const BackToTopButton = () => {
     <button
       ref={buttonRef}
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 group"
+      className="fixed bottom-8 right-8 z-50 bg-linear-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-4 rounded-full shadow-2xl transition-all duration-300 group"
       style={{ opacity: 0, transform: 'scale(0)' }}
       aria-label="Back to top"
     >
