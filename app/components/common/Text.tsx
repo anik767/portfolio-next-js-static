@@ -7,7 +7,7 @@ interface TextProps {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'caption' | 'small';
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
   weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
-  color?: 'primary' | 'secondary' | 'pink' | 'muted' | 'white' | 'black' | 'gray';
+  color?: 'primary' | 'secondary' | 'accent' | 'pink' | 'muted' | 'white' | 'black' | 'gray';
   gradient?: 'pink' | 'blue' | 'purple' | 'green' | 'orange' | 'red' | 'cyan' | 'yellow' | 'custom';
   gradientDirection?: 'to-r' | 'to-l' | 'to-t' | 'to-b' | 'to-tr' | 'to-tl' | 'to-br' | 'to-bl';
   fontFamily?: 'sans' | 'poppins' | 'playfair' | 'rajdhani' | 'mono';

@@ -27,12 +27,12 @@ const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-16 items-center">
           {/* Left Section - Text Content */}
           <div id="hero-content" className="text-white space-y-7 relative z-40">
-              {/* Small text with enhanced styling */}
-              <div id="hero-greeting" className="inline-block">
-                <Badge variant="secondary" className="tracking-[0.3em]">
-                  Hallo
-                </Badge>
-              </div>
+            {/* Small text with enhanced styling */}
+            <div id="hero-greeting" className="inline-block">
+              <Badge variant="secondary" className="tracking-[0.3em]">
+                Hallo
+              </Badge>
+            </div>
 
             {/* Main heading with enhanced effects */}
             <div className="space-y-0.5 ">
@@ -40,12 +40,12 @@ const Hero = () => {
                 I AM
               </Text>
               <Text id="hero-name" variant="h1" size="4xl" color="primary" fontFamily="rajdhani" className="md:text-5xl lg:text-6xl leading-[1.2] tracking-tight drop-shadow-2xl">
-               Azmain Iqtidar Anik
+                Azmain Iqtidar Anik
               </Text>
-              <Text 
+              <Text
                 id="hero-title"
-                variant="h1" 
-                size="4xl" 
+                variant="h1"
+                size="4xl"
                 gradientDirection="to-r"
                 fontFamily="rajdhani"
                 className="md:text-5xl lg:text-7xl"
@@ -60,27 +60,27 @@ const Hero = () => {
 
             {/* Description with typing animation */}
 
-              <TypingAnimation
-                text={[
-                  "I create modern web applications using cutting-edge technologies like React, Node.js, and TypeScript.",
-                  "With expertise in both frontend and backend development, I bring innovative ideas to life.",
-                  "I specialize in clean code and exceptional user experiences that make a difference.",
-                  "Let's build something amazing together!"
-                ]}
-                speed={20}
-                backSpeed={10}
-                backDelay={1500}
-                loop={true}
-                textColor="secondary"
-                fontFamily="poppins"
-                className="text-xl h-[80px] leading-relaxed font-light"
-              />
-            
+            <TypingAnimation
+              text={[
+                "I create modern web applications using cutting-edge technologies like React, Node.js, and TypeScript.",
+                "With expertise in both frontend and backend development, I bring innovative ideas to life.",
+                "I specialize in clean code and exceptional user experiences that make a difference.",
+                "Let's build something amazing together!"
+              ]}
+              speed={20}
+              backSpeed={10}
+              backDelay={1500}
+              loop={true}
+              textColor="secondary"
+              fontFamily="poppins"
+              className="text-xl h-[80px] leading-relaxed font-light"
+            />
+
             {/* Enhanced CTA Button */}
             <div id="hero-buttons" className="flex flex-col sm:flex-row gap-6">
               <Button
                 scrollTo="projects"
-                variant="secondary"
+                variant="success"
                 size="sm"
               >
                 View My Work
@@ -123,7 +123,7 @@ const Hero = () => {
               </div>
             </div>
           </div>
-
+          
           {/* Right Section - Enhanced Image and Overlay */}
           <div className="relative z-40">
             {/* Profile Image Container */}
@@ -159,6 +159,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      
     </section>
   );
 };

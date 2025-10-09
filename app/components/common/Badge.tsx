@@ -4,14 +4,14 @@ import { ReactNode } from 'react';
 
 interface BadgeProps {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'info';
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'accent' | 'PurpleLight' | 'Emerald' | 'Neutral' | 'cyan' | 'perple' | 'success' | 'warning' | 'info' | 'accent';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
 
-const Badge = ({ 
-  children, 
-  variant = 'primary', 
+const Badge = ({
+  children,
+  variant = 'primary',
   size = 'md',
   className = ''
 }: BadgeProps) => {
@@ -23,39 +23,23 @@ const Badge = ({
     lg: "text-base px-6 py-3"
   };
 
-  const variantClasses = {
-    primary: "border-[#164c3b]/30",     // Fresh Green theme
-    secondary: "border-[#9c4e23]/30",   // Warm Sunset (Yellow) theme
-    success: "border-[#9c4e23]/30",     // Warm Sunset (Yellow) theme
-    warning: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20",
-    info: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20"
-  };
-  
-  // Get theme color style
-  const getThemeStyle = (variant: string) => {
-    switch(variant) {
-      case 'primary':
-        return { 
-          backgroundColor: '#c4ffb240', 
-          color: '#164c3b' 
-        };
-      case 'secondary':
-      case 'success':
-        return { 
-          backgroundColor: '#fff58c40', 
-          color: '#9c4e23' 
-        };
-      default:
-        return {};
-    }
+  const variantClasses: Record<string, string> = {
+    primary:'bg-blue-500/10 text-blue-500 border-blue-400/40',
+    secondary:'bg-orange-300/10 text-orange-500 border-orange-200/40',
+    PurpleLight:'bg-purple-300/10 text-purple-500 border-purple-200/40',
+    Emerald:'bg-emerald-500/10 text-emerald-600 border-emerald-400/40',
+    Neutral:'bg-neutral-500/10 text-neutral-600 border-neutral-400/40',
+    cyan:'bg-cyan-500/10 text-cyan-600 border-cyan-400/40',
+    perple:'bg-violet-500/10 text-violet-600 border-violet-400/40',
+    success:'bg-emerald-500/10 text-emerald-500 border-emerald-400/40',
+    warning:'bg-rose-500/10 text-rose-500 border-rose-400/40',
+    info:'bg-gray-500/10 text-gray-500 border-gray-400/40',
+    accent:'bg-orange-400/10 text-orange-400 border-orange-300/40',
   };
 
-  const themeStyle = getThemeStyle(variant);
-  
   return (
-    <span 
+    <span
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
-      style={themeStyle}
     >
       {children}
     </span>
