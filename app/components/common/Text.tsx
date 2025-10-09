@@ -90,6 +90,7 @@ const Text = ({
     primary: 'text-white',
     secondary: 'text-gray-300',
     pink: 'text-pink-400',
+    accent: 'text-[#59C378]',
     muted: 'text-gray-400',
     white: 'text-white',
     black: 'text-black',
