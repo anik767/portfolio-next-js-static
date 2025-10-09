@@ -218,7 +218,7 @@ const Test = () => {
                 <h4 className="text-lg font-bold mb-2">Outlined Card</h4>
                 <p className="text-gray-600">This card has an outline border.</p>
               </Card>
-              <Card variant="gradient">
+              <Card variant="elevated">
                 <h4 className="text-lg font-bold mb-2">Gradient Card</h4>
                 <p className="text-gray-600">This card has a gradient background.</p>
               </Card>
