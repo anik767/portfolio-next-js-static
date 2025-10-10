@@ -49,10 +49,9 @@ const Hero = () => {
                 gradientDirection="to-r"
                 fontFamily="rajdhani"
                 className="md:text-5xl lg:text-7xl"
-                style={{
-                  WebkitTextStroke: '.8px gray',
-                  WebkitTextFillColor: 'transparent',
-                }}
+                stroke={true}
+                strokeWidth=".8px"
+                strokeColor="gray"
               >
                 Web Developer
               </Text>
@@ -80,7 +79,7 @@ const Hero = () => {
             <div id="hero-buttons" className="flex flex-col sm:flex-row gap-6">
               <Button
                 scrollTo="projects"
-                variant="success"
+                variant="primary"
                 size="sm"
               >
                 View My Work
@@ -111,8 +110,8 @@ const Hero = () => {
 
             {/* Social Links */}
             <div className="space-y-6">
-              <Text variant="caption" color="muted" weight="medium" className="tracking-wide">
-                Find me on:
+              <Text variant="caption" color="muted" weight="medium" className="tracking-wide capitalize">
+                Find on me:
               </Text>
               <div id="hero-social-links" className="flex space-x-6">
                 <SocialLink href="https://www.facebook.com/azmainiqtidaranik" platform="facebook" className="hero-social-item" />

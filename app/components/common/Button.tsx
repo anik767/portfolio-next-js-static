@@ -33,22 +33,22 @@ const Button = ({
     right: "justify-end"
   };
 
-  const baseClasses = "font-bold rounded-full transition-all duration-500 ease-out flex items-center group text-lg backdrop-blur-sm cursor-pointer";
+  const baseClasses = "font-bold rounded-full shadow-lg transition-all text-white-500 duration-500 ease-out flex items-center group transform hover:shadow-xl backdrop-blur-sm cursor-pointer hover:scale-105";
   
   const sizeClasses = {
     sm: "py-3 px-5 text-sm",
-    md: "py-4 px-8 text-base",
-    lg: "py-6 px-12 text-lg"
+    md: "py-3 px-6 text-base",
+    lg: "py-3 px-8 text-lg"
   };
 
   const variantClasses = {
-    primary: "bg-blue-500/10 text-blue-500 border-blue-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",    // Blue Sky theme
-    secondary: "bg-violet-500/10 text-violet-500 border-violet-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",  // Warm Sunset (Yellow) theme
-    success: "bg-emerald-500/10 text-emerald-500 border-emerald-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",    // Fresh Green theme
-    outline: "bg-transparent hover:bg-white/10 border-2",
-    warning: "bg-rose-500/10 text-rose-500 border-rose-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",
-    info: "bg-gray-500/10 text-gray-500 border-gray-400/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2",
-    accent: "bg-orange-400/10 text-orange-400 border-orange-300/40 shadow-lg hover:shadow-xl transform hover:scale-105 border-2"
+    primary: "bg-blue-500",
+    secondary: "bg-violet-500",
+    success: "bg-emerald-500",
+    outline: "bg-transparent hover:bg-white/10 border-2 border-blue-500",
+    warning: "bg-rose-500",
+    info: "bg-gray-500",
+    accent: "bg-orange-400/10 border-2 border-orange-400 text-orange-400"
   };
   
   // Tailwind-safe explicit color classes for outline variant
@@ -66,7 +66,7 @@ const Button = ({
     cyan:   "text-cyan-500 border-cyan-400/50 hover:border-cyan-500",
   };
 
-  const disabledClasses = disabled ? "opacity-50 cursor-not-allowed hover:transform-none hover:scale-100" : "";
+  const disabledClasses = disabled ? "opacity-50 cursor-not-allowed hover:-none hover:scale-100" : "";
 
   const handleClick = () => {
     if (scrollTo) {

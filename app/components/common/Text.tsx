@@ -1,21 +1,26 @@
 'use client';
 
-import { ReactNode } from 'react';
+import type { CSSProperties, ElementType, ReactNode } from 'react';
+
+type Variant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'caption' | 'small' | 'stock';
 
 interface TextProps {
   children: ReactNode;
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'caption' | 'small';
+  variant?: Variant;
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
-  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black';
+  weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
   color?: 'primary' | 'secondary' | 'accent' | 'pink' | 'muted' | 'white' | 'black' | 'gray';
   gradient?: 'pink' | 'blue' | 'purple' | 'green' | 'orange' | 'red' | 'cyan' | 'yellow' | 'custom';
   gradientDirection?: 'to-r' | 'to-l' | 'to-t' | 'to-b' | 'to-tr' | 'to-tl' | 'to-br' | 'to-bl';
   fontFamily?: 'sans' | 'poppins' | 'playfair' | 'rajdhani' | 'mono';
   align?: 'left' | 'center' | 'right' | 'justify';
   className?: string;
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div';
+  as?: ElementType;
   id?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
+  stroke?: boolean;
+  strokeWidth?: string; // e.g. '.8px'
+  strokeColor?: string; // e.g. 'gray'
 }
 
 const Text = ({ 
@@ -31,10 +36,13 @@ const Text = ({
   className = '',
   as,
   id,
-  style
+  style,
+  stroke = false,
+  strokeWidth = '.8px',
+  strokeColor = 'gray'
 }: TextProps) => {
   // Default size mapping based on variant
-  const defaultSizes = {
+  const defaultSizes: Record<Variant, 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl'> = {
     h1: '6xl',
     h2: '5xl', 
     h3: '4xl',
@@ -43,11 +51,12 @@ const Text = ({
     h6: 'xl',
     body: 'base',
     caption: 'sm',
-    small: 'xs'
+    small: 'xs',
+    stock: 'base'
   };
 
   // Default weight mapping based on variant
-  const defaultWeights = {
+  const defaultWeights: Record<Variant, 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold' | 'black'> = {
     h1: 'black',
     h2: 'extrabold',
     h3: 'bold',
@@ -56,12 +65,14 @@ const Text = ({
     h6: 'semibold',
     body: 'normal',
     caption: 'medium',
-    small: 'normal'
+    small: 'normal',
+    stock: 'normal'
   };
 
   const finalSize = size || defaultSizes[variant];
   const finalWeight = weight || defaultWeights[variant];
-  const Component = as || (variant.startsWith('h') ? variant : 'p');
+  const headingTag = (variant && variant.startsWith('h')) ? (variant as 'h1'|'h2'|'h3'|'h4'|'h5'|'h6') : 'p';
+  const Component: ElementType = as || headingTag;
 
   const sizeClasses = {
     xs: 'text-xs',
@@ -87,7 +98,7 @@ const Text = ({
   } as const;
 
   const colorClasses = {
-    primary: 'text-white',
+    primary: 'text-gray-300',
     secondary: 'text-gray-300',
     pink: 'text-pink-400',
     accent: 'text-[#59C378]',
@@ -98,8 +109,8 @@ const Text = ({
   } as const;
 
   const gradientClasses = {
-    pink: '',     // Fresh Green theme - will use inline style
-    blue: '',     // Warm Sunset (Yellow) theme - will use inline style  
+    pink: 'bg-linear-to-r from-pink-400 via-pink-500 to-pink-600',     // Fresh Green theme - will use inline style
+    blue: 'bg-linear-to-r from-blue-400 via-blue-500 to-blue-600',     // Warm Sunset (Yellow) theme - will use inline style  
     purple: 'bg-linear-to-r from-purple-400 via-purple-500 to-purple-600',
     green: 'bg-linear-to-r from-green-400 via-green-500 to-green-600',
     orange: 'bg-linear-to-r from-orange-400 via-orange-500 to-orange-600',
@@ -135,7 +146,7 @@ const Text = ({
     mono: 'font-mono'
   } as const;
 
-  const baseClasses = "transition-colors duration-200";
+  const baseClasses = "transition-colors duration-200 text-black";
   
   // Get theme gradient style
   const getThemeGradientStyle = () => {
@@ -166,7 +177,13 @@ const Text = ({
   const gradientClassName = isGradient ? `${directionClass} ${gradientClass} bg-clip-text text-transparent` : '';
   
   const themeGradientStyle = getThemeGradientStyle();
-  const combinedStyle = { ...style, ...themeGradientStyle };
+  const strokeStyle = stroke
+    ? {
+        WebkitTextFillColor: 'transparent',
+        WebkitTextStroke: `${strokeWidth} ${strokeColor}`
+      }
+    : {};
+  const combinedStyle = { ...style, ...strokeStyle, ...themeGradientStyle };
 
   return (
     <Component id={id} className={`${finalClassName} ${gradientClassName}`} style={combinedStyle}>

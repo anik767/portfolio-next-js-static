@@ -149,7 +149,7 @@ const Education = () => {
                       </div>
                     </div>
                     
-                    <div className="space-y-2">
+                    <div className="flex flex-wrap gap-2">
                       <Badge variant="primary" size="sm">
                         {edu.duration}
                       </Badge>
