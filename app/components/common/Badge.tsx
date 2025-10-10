@@ -15,12 +15,12 @@ const Badge = ({
   size = 'md',
   className = ''
 }: BadgeProps) => {
-  const baseClasses = "inline-block font-semibold rounded-full backdrop-blur-sm border";
+  const baseClasses = "flex items-center font-semibold rounded-full backdrop-blur-sm border";
   
   const sizeClasses = {
     sm: "text-xs px-3 py-1",
     md: "text-sm px-4 py-2",
-    lg: "text-base px-6 py-3"
+    lg: "text-base px-6 py-2"
   };
 
   const variantClasses: Record<string, string> = {

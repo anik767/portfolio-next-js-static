@@ -11,9 +11,9 @@ const Contact = () => {
         </svg>
       ),
       title: 'Email',
-      value: 'azmain.anik@example.com',
+      value: 'azmainanik@gmail.com',
       description: 'Send me an email anytime',
-      action: 'mailto:azmain.anik@example.com'
+      action: 'mailto:azmainanik@gmail.com'
     },
     {
       icon: (
@@ -22,9 +22,9 @@ const Contact = () => {
         </svg>
       ),
       title: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+8801795382975',
       description: 'Call me for urgent matters',
-      action: 'tel:+15551234567'
+      action: 'tel:+8801795382975'
     },
     {
       icon: (
@@ -34,7 +34,7 @@ const Contact = () => {
         </svg>
       ),
       title: 'Location',
-      value: 'New York, NY',
+      value: 'Dhaka, Bangladesh',
       description: 'Available for remote work',
       action: null
     },

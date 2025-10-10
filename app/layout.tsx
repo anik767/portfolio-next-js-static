@@ -49,8 +49,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${playfair.variable} ${rajdhani.variable} ${jetbrainsMono.variable}`}>
+    <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${inter.className} ${inter.variable} ${poppins.variable} ${playfair.variable} ${rajdhani.variable} ${jetbrainsMono.variable} bg-[#F4F1EA] antialiased`}
       >
         <Header />
