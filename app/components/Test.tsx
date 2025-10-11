@@ -1,12 +1,144 @@
 'use client';
 
-import { BackgroundCard } from './common';
+import { useState } from 'react';
+import { BackgroundCard, ProductCard, Table, Tabs } from './common';
 import Badge from './common/Badge';
 import Button from './common/Button';
 import Card from './common/Card';
 import Text from './common/Text';
 
 const Test = () => {
+  // Modal state
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  // Sample data for components
+  const products = [
+    {
+      title: "Premium Laptop",
+      description: "High-performance laptop with latest technology and sleek design.",
+      price: "$1,299",
+      image: "/images/example.png",
+      badge: "New",
+      badgeVariant: "primary" as const
+    },
+    {
+      title: "Wireless Headphones",
+      description: "Noise-cancelling wireless headphones with premium sound quality.",
+      price: "$199",
+      image: "/images/example.png",
+      badge: "Sale",
+      badgeVariant: "success" as const
+    },
+    {
+      title: "Smart Watch",
+      description: "Advanced smartwatch with health monitoring and fitness tracking.",
+      price: "$399",
+      image: "/images/example.png",
+      badge: "Popular",
+      badgeVariant: "warning" as const
+    }
+  ];
+
+  const tableData = [
+    { id: 1, name: "John Doe", email: "john@example.com", role: "Developer", status: "Active" },
+    { id: 2, name: "Jane Smith", email: "jane@example.com", role: "Designer", status: "Active" },
+    { id: 3, name: "Bob Johnson", email: "bob@example.com", role: "Manager", status: "Inactive" },
+    { id: 4, name: "Alice Brown", email: "alice@example.com", role: "Developer", status: "Active" }
+  ];
+
+  const tableColumns = [
+    { key: 'id', title: 'ID', width: '80px' },
+    { key: 'name', title: 'Name' },
+    { key: 'email', title: 'Email' },
+    { key: 'role', title: 'Role' },
+    { 
+      key: 'status', 
+      title: 'Status',
+      render: (value: string) => (
+        <Badge variant={value === 'Active' ? 'success' : 'warning'} size="sm">
+          {value}
+        </Badge>
+      )
+    }
+  ];
+
+  const tabItems = [
+    {
+      key: 'overview',
+      label: 'Overview',
+      content: (
+        <div className="space-y-4">
+          <Text variant="h3" color="black">Project Overview</Text>
+          <Text variant="body" color="gray">
+            This is a comprehensive overview of the project. It includes all the key information
+            about the project goals, timeline, and deliverables.
+          </Text>
+          <div className="grid grid-cols-2 gap-4">
+            <Card variant="outlined">
+              <Text variant="h4" color="black">Timeline</Text>
+              <Text variant="body" color="gray">3 months</Text>
+            </Card>
+            <Card variant="outlined">
+              <Text variant="h4" color="black">Budget</Text>
+              <Text variant="body" color="gray">$50,000</Text>
+            </Card>
+          </div>
+        </div>
+      )
+    },
+    {
+      key: 'details',
+      label: 'Details',
+      content: (
+        <div className="space-y-4">
+          <Text variant="h3" color="black">Project Details</Text>
+          <Text variant="body" color="gray">
+            Detailed information about the project requirements, technical specifications,
+            and implementation details.
+          </Text>
+          <ul className="space-y-2">
+            <li className="flex items-center">
+              <Badge variant="success" size="sm" className="mr-2">✓</Badge>
+              <Text variant="body" color="gray">Frontend Development</Text>
+            </li>
+            <li className="flex items-center">
+              <Badge variant="success" size="sm" className="mr-2">✓</Badge>
+              <Text variant="body" color="gray">Backend API</Text>
+            </li>
+            <li className="flex items-center">
+              <Badge variant="warning" size="sm" className="mr-2">⏳</Badge>
+              <Text variant="body" color="gray">Database Design</Text>
+            </li>
+          </ul>
+        </div>
+      )
+    },
+    {
+      key: 'team',
+      label: 'Team',
+      content: (
+        <div className="space-y-4">
+          <Text variant="h3" color="black">Team Members</Text>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {tableData.slice(0, 4).map((member) => (
+              <Card key={member.id} variant="outlined">
+                <div className="flex items-center space-x-3">
+                  <div className="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">
+                    {member.name.charAt(0)}
+                  </div>
+                  <div>
+                    <Text variant="body" color="black" weight="semibold">{member.name}</Text>
+                    <Text variant="small" color="gray">{member.role}</Text>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      )
+    }
+  ];
+
   const badgeVariants = [
     { variant: 'primary' as const, label: 'Primary' },
     { variant: 'secondary' as const, label: 'Secondary' },
@@ -14,7 +146,7 @@ const Test = () => {
     { variant: 'Emerald' as const, label: 'Emerald' },
     { variant: 'Neutral' as const, label: 'Neutral' },
     { variant: 'cyan' as const, label: 'Cyan' },
-    { variant: 'perple' as const, label: 'Purple' },
+    { variant: 'purple' as const, label: 'Purple' },
     { variant: 'success' as const, label: 'Success' },
     { variant: 'warning' as const, label: 'Warning' },
     { variant: 'info' as const, label: 'Info' },
@@ -332,6 +464,102 @@ const Test = () => {
             </div>
           </div>
         </div>
+
+        {/* ========== PRODUCT CARD TESTS ========== */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">🛍️ Product Card Component</h2>
+            <p className="text-gray-600">E-commerce product cards with various features</p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Product Cards</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {products.map((product, index) => (
+                <ProductCard
+                  key={index}
+                  title={product.title}
+                  description={product.description}
+                  price={product.price}
+                  image={product.image}
+                  badge={product.badge}
+                  badgeVariant={product.badgeVariant}
+                  onAddToCart={() => console.log('Added to cart:', product.title)}
+                  onViewDetails={() => console.log('View details:', product.title)}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* ========== TABLE TESTS ========== */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">📊 Table Component</h2>
+            <p className="text-gray-600">Data tables with various styling options</p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Basic Table</h3>
+            <Table
+              columns={tableColumns}
+              data={tableData}
+              striped={true}
+              hoverable={true}
+              bordered={false}
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Bordered Table</h3>
+            <Table
+              columns={tableColumns}
+              data={tableData}
+              striped={false}
+              hoverable={true}
+              bordered={true}
+            />
+          </div>
+        </div>
+
+        {/* ========== TABS TESTS ========== */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">📑 Tabs Component</h2>
+            <p className="text-gray-600">Tabbed interfaces with different styles</p>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Default Tabs</h3>
+            <Tabs
+              items={tabItems}
+              defaultActiveKey="overview"
+              variant="default"
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Pills Tabs</h3>
+            <Tabs
+              items={tabItems}
+              defaultActiveKey="overview"
+              variant="pills"
+            />
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">Underline Tabs</h3>
+            <Tabs
+              items={tabItems}
+              defaultActiveKey="overview"
+              variant="underline"
+            />
+          </div>
+        </div>
+
+        
+
+        
 
       </div>
     </div>
