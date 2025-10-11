@@ -29,7 +29,7 @@ const Hero = () => {
           <div id="hero-content" className="text-white space-y-7 relative z-40">
             {/* Small text with enhanced styling */}
             <div id="hero-greeting" className="inline-block">
-              <Badge variant="secondary" className="tracking-[0.3em]">
+              <Badge variant="primary" className="tracking-[0.3em]">
                 Hallo
               </Badge>
             </div>

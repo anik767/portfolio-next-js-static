@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 interface BadgeProps {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'accent' | 'PurpleLight' | 'Emerald' | 'Neutral' | 'cyan' | 'perple' | 'success' | 'warning' | 'info' | 'accent';
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'info' | 'accent' | 'PurpleLight' | 'Emerald' | 'Neutral' | 'cyan' | 'purple';
   size?: 'sm' | 'md' | 'lg';
   className?: string;
 }
@@ -15,7 +15,7 @@ const Badge = ({
   size = 'md',
   className = ''
 }: BadgeProps) => {
-  const baseClasses = "flex items-center font-semibold rounded-full backdrop-blur-sm border";
+  const baseClasses = "inline-flex items-center font-semibold rounded-full backdrop-blur-sm border";
   
   const sizeClasses = {
     sm: "text-xs px-3 py-1",
