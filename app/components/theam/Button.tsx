@@ -75,9 +75,13 @@ const Button = ({
     if (scrollTo) {
       const element = document.getElementById(scrollTo);
       if (element) {
-        element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+        // Get element position
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for fixed header
+        
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: 'smooth'
         });
       }
     } else if (onClick) {
