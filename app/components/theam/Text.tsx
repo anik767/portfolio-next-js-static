@@ -10,7 +10,7 @@ interface TextProps {
   size?: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | '2xl' | '3xl' | '4xl' | '5xl' | '6xl';
   weight?: 'light' | 'normal' | 'medium' | 'semibold' | 'bold' | 'extrabold';
   color?: 'primary' | 'secondary' | 'accent' | 'pink' | 'muted' | 'white' | 'black' | 'gray';
-  gradient?: 'pink' | 'blue' | 'purple' | 'green' | 'orange' | 'red' | 'cyan' | 'yellow' | 'custom';
+  gradient?: 'pink' | 'blue' | 'purple' | 'green' | 'orange' | 'red' | 'cyan' | 'yellow' | 'custom' | 'amethyst' | 'arctic' | 'skyblue' | 'turquoise' | 'neoncyan' | 'neonorange' | 'electriclime' | 'seafoam' | 'mintice' | 'watermelon' | 'plum' | 'magenta' | 'lavender' | 'violet';
   gradientDirection?: 'to-r' | 'to-l' | 'to-t' | 'to-b' | 'to-tr' | 'to-tl' | 'to-br' | 'to-bl';
   fontFamily?: 'sans' | 'poppins' | 'playfair' | 'rajdhani' | 'mono';
   align?: 'left' | 'center' | 'right' | 'justify';
@@ -117,7 +117,21 @@ const Text = ({
     red: 'bg-linear-to-r from-red-400 via-red-500 to-red-600',
     cyan: 'bg-linear-to-r from-cyan-400 via-cyan-500 to-cyan-600',
     yellow: 'bg-linear-to-r from-yellow-400 via-yellow-500 to-yellow-600',
-    custom: ''
+    custom: '',
+    amethyst: 'bg-linear-to-r from-purple-500 via-purple-600 to-violet-600',
+    arctic: 'bg-linear-to-r from-cyan-500 via-cyan-600 to-blue-500',
+    skyblue: 'bg-linear-to-r from-sky-300 via-sky-400 to-blue-400',
+    turquoise: 'bg-linear-to-r from-teal-300 via-teal-400 to-cyan-500',
+    neoncyan: 'bg-linear-to-r from-cyan-400 via-cyan-500 to-blue-400',
+    neonorange: 'bg-linear-to-r from-orange-400 via-orange-500 to-red-500',
+    electriclime: 'bg-linear-to-r from-lime-300 via-lime-400 to-green-500',
+    seafoam: 'bg-linear-to-r from-teal-200 via-teal-300 to-green-300',
+    mintice: 'bg-linear-to-r from-green-300 via-green-400 to-green-500',
+    watermelon: 'bg-linear-to-r from-rose-400 via-rose-500 to-pink-500',
+    plum: 'bg-linear-to-r from-purple-700 via-purple-800 to-fuchsia-700',
+    magenta: 'bg-linear-to-r from-fuchsia-600 via-fuchsia-700 to-purple-700',
+    lavender: 'bg-linear-to-r from-purple-200 via-purple-300 to-violet-300',
+    violet: 'bg-linear-to-r from-violet-500 via-violet-600 to-purple-600'
   } as const;
 
   const gradientDirectionClasses = {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Text, Card, Badge, Button } from './common';
+import { Text, Card, Badge, Button } from './theam';
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
@@ -193,7 +193,7 @@ const Projects = () => {
                   </Text>
                   <div className="flex flex-wrap gap-1">
                     {project.technologies.map((tech, techIndex) => (
-                      <Badge key={techIndex} variant="secondary" size="sm">
+                      <Badge key={techIndex} variant="emerald" size="sm">
                         {tech}
                       </Badge>
                     ))}
@@ -234,7 +234,7 @@ const Projects = () => {
                 <div className="flex space-x-3">
                   <Button
                     onClick={() => window.open(project.liveUrl, '_blank')}
-                    variant="primary"
+                    variant="emerald"
                     size="sm"
                     className="flex-1"
                   >
@@ -245,7 +245,7 @@ const Projects = () => {
                   </Button>
                   <Button
                     onClick={() => window.open(project.githubUrl, '_blank')}
-                    variant="outline"
+                    variant="dark"
                     size="sm"
                     className="flex-1"
                   >
@@ -264,9 +264,8 @@ const Projects = () => {
         <div className="mt-12 flex justify-center">
           <Button
             onClick={() => setShowAll(!showAll)}
-            variant="secondary"
+            variant="cyanblue"
             size="md"
-            color="blue"
           >
             <span className="inline-flex items-center">
               {showAll ? (

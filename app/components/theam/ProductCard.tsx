@@ -11,12 +11,12 @@ interface ProductCardProps {
   price: string;
   image: string;
   badge?: string;
-  badgeVariant?: 'emerald' | 'outline' | 'cyanblue' | 'lime' | 'sunset' | 'dark' | 'elegant' | 'fuchsia' | 'sky' | 'ocean' | 'rose';
+  badgeVariant?: 'emerald' | 'outline' | 'cyanblue' | 'lime' | 'sunset' | 'dark' | 'elegant' | 'fuchsia' | 'sky' | 'ocean' | 'rose' | 'amethyst' | 'arctic' | 'skyblue' | 'turquoise' | 'neoncyan' | 'neonorange' | 'electriclime' | 'seafoam' | 'mintice' | 'watermelon' | 'plum' | 'magenta' | 'lavender' | 'violet';
   onAddToCart?: () => void;
   onViewDetails?: () => void;
   className?: string;
   children?: ReactNode;
-  variant?: 'emerald' | 'outline' | 'cyanblue' | 'lime' | 'sunset' | 'dark' | 'elegant' | 'fuchsia' | 'sky' | 'ocean' | 'rose';
+  variant?: 'emerald' | 'outline' | 'cyanblue' | 'lime' | 'sunset' | 'dark' | 'elegant' | 'fuchsia' | 'sky' | 'ocean' | 'rose' | 'amethyst' | 'arctic' | 'skyblue' | 'turquoise' | 'neoncyan' | 'neonorange' | 'electriclime' | 'seafoam' | 'mintice' | 'watermelon' | 'plum' | 'magenta' | 'lavender' | 'violet';
 }
 
 const ProductCard = ({
@@ -56,6 +56,34 @@ const ProductCard = ({
         return `${baseClasses} bg-gradient-to-br from-sky-50 to-blue-50 border-2 border-sky-400/40`;
       case 'ocean':
         return `${baseClasses} bg-gradient-to-br from-teal-50 to-cyan-50 border-2 border-teal-500/30 rounded-3xl`;
+      case 'amethyst':
+        return `${baseClasses} bg-gradient-to-br from-purple-50 to-violet-50 border-2 border-purple-500/30`;
+      case 'arctic':
+        return `${baseClasses} bg-gradient-to-br from-cyan-50 to-blue-50 border-2 border-cyan-500/30`;
+      case 'skyblue':
+        return `${baseClasses} bg-gradient-to-br from-sky-50 to-blue-50 border-2 border-sky-400/30`;
+      case 'turquoise':
+        return `${baseClasses} bg-gradient-to-br from-teal-50 to-cyan-100 border-2 border-teal-400/40`;
+      case 'neoncyan':
+        return `${baseClasses} bg-gradient-to-br from-cyan-100 to-blue-100 border-2 border-cyan-500/50 shadow-cyan-400/20`;
+      case 'neonorange':
+        return `${baseClasses} bg-gradient-to-br from-orange-100 to-red-100 border-2 border-orange-500/50 shadow-orange-500/20`;
+      case 'electriclime':
+        return `${baseClasses} bg-gradient-to-br from-lime-100 to-green-100 border-2 border-lime-500/50 shadow-lime-400/20`;
+      case 'seafoam':
+        return `${baseClasses} bg-gradient-to-br from-teal-50 to-green-50 border-2 border-teal-300/30`;
+      case 'mintice':
+        return `${baseClasses} bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-300/30`;
+      case 'watermelon':
+        return `${baseClasses} bg-gradient-to-br from-rose-50 to-pink-50 border-2 border-rose-400/40`;
+      case 'plum':
+        return `${baseClasses} bg-gradient-to-br from-purple-100 to-fuchsia-100 border-2 border-purple-700/30`;
+      case 'magenta':
+        return `${baseClasses} bg-gradient-to-br from-fuchsia-50 to-purple-100 border-2 border-fuchsia-600/40`;
+      case 'lavender':
+        return `${baseClasses} bg-gradient-to-br from-purple-50 to-violet-50 border-2 border-purple-200/50`;
+      case 'violet':
+        return `${baseClasses} bg-gradient-to-br from-violet-50 to-purple-50 border-2 border-violet-500/30`;
       case 'emerald':
       default:
         return `${baseClasses} bg-gradient-to-br from-emerald-50 to-teal-50 border-2 border-emerald-500/30`;
@@ -98,6 +126,34 @@ const ProductCard = ({
         return 'text-sky-600';
       case 'ocean':
         return 'text-teal-600';
+      case 'amethyst':
+        return 'text-purple-600';
+      case 'arctic':
+        return 'text-cyan-600';
+      case 'skyblue':
+        return 'text-sky-600';
+      case 'turquoise':
+        return 'text-teal-600';
+      case 'neoncyan':
+        return 'text-cyan-700';
+      case 'neonorange':
+        return 'text-orange-600';
+      case 'electriclime':
+        return 'text-lime-700';
+      case 'seafoam':
+        return 'text-teal-600';
+      case 'mintice':
+        return 'text-green-600';
+      case 'watermelon':
+        return 'text-rose-600';
+      case 'plum':
+        return 'text-purple-700';
+      case 'magenta':
+        return 'text-fuchsia-600';
+      case 'lavender':
+        return 'text-purple-600';
+      case 'violet':
+        return 'text-violet-600';
       case 'emerald':
       default:
         return 'text-emerald-600';

@@ -1,15 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { BackgroundCard, ProductCard, Table, Tabs } from './common';
-import Badge from './common/Badge';
-import Button from './common/Button';
-import Card from './common/Card';
-import Text from './common/Text';
+import { BackgroundCard, ProductCard, Table, Tabs } from './theam';
+import Badge from './theam/Badge';
+import Button from './theam/Button';
+import Card from './theam/Card';
+import Text from './theam/Text';
 
 const Test = () => {
-  // Modal state
-  const [isModalOpen, setModalOpen] = useState(false);
 
   // Sample data for components
   const products = [
@@ -47,13 +45,14 @@ const Test = () => {
   ];
 
   const tableColumns = [
-    { key: 'id', title: 'ID', width: '80px' },
-    { key: 'name', title: 'Name' },
-    { key: 'email', title: 'Email' },
-    { key: 'role', title: 'Role' },
+    { key: 'id', title: 'ID', width: '150px' },
+    { key: 'name', title: 'Name', width: '300px' },
+    { key: 'email', title: 'Email', width: '350px' },
+    { key: 'role', title: 'Role', width: '250px' },
     {
       key: 'status',
       title: 'Status',
+      width: '200px',
       render: (value: string) => (
         <Badge variant={value === 'Active' ? 'elegant' : 'rose'} size="sm">
           {value}
@@ -65,7 +64,7 @@ const Test = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="container mx-auto">
         {/* Main Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl font-bold text-gray-800 mb-4">Component Library Test</h1>
@@ -1320,6 +1319,1149 @@ const Test = () => {
                 <Button variant="rose" size="sm">Small</Button>
                 <Button variant="rose">Medium</Button>
                 <Button variant="rose" size="lg">Large</Button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* ========== NEW THEME VARIANTS SHOWCASE ========== */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">✨ New Theme Variants Collection</h2>
+            <p className="text-gray-600 mb-2">14 Beautiful new themes across all components</p>
+            <p className="text-sm text-gray-500">Amethyst • Arctic • Sky Blue • Turquoise • Neon Cyan • Neon Orange • Electric Lime • Seafoam • Mint Ice • Watermelon • Plum • Magenta • Lavender • Violet</p>
+          </div>
+
+          {/* Text Component - New Gradients */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">📝 Text Component - New Gradient Themes</h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Purple</h4>
+                <Text variant="h3" gradient="amethyst">Amethyst Purple Gradient</Text>
+                <Text variant="body" gradient="amethyst">Beautiful purple to violet gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Arctic Ice</h4>
+                <Text variant="h3" gradient="arctic">Arctic Ice Gradient</Text>
+                <Text variant="body" gradient="arctic">Cool cyan to blue gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Sky Blue</h4>
+                <Text variant="h3" gradient="skyblue">Sky Blue Gradient</Text>
+                <Text variant="body" gradient="skyblue">Soft sky to blue gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Turquoise Glow</h4>
+                <Text variant="h3" gradient="turquoise">Turquoise Glow Gradient</Text>
+                <Text variant="body" gradient="turquoise">Vibrant teal to cyan gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Cyan</h4>
+                <Text variant="h3" gradient="neoncyan">Neon Cyan Gradient</Text>
+                <Text variant="body" gradient="neoncyan">Electric cyan gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Orange</h4>
+                <Text variant="h3" gradient="neonorange">Neon Orange Gradient</Text>
+                <Text variant="body" gradient="neonorange">Bright orange to red gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Electric Lime</h4>
+                <Text variant="h3" gradient="electriclime">Electric Lime Gradient</Text>
+                <Text variant="body" gradient="electriclime">Vibrant lime to green gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Seafoam Green</h4>
+                <Text variant="h3" gradient="seafoam">Seafoam Green Gradient</Text>
+                <Text variant="body" gradient="seafoam">Soft teal to green gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Mint Ice</h4>
+                <Text variant="h3" gradient="mintice">Mint Ice Gradient</Text>
+                <Text variant="body" gradient="mintice">Fresh mint green gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Watermelon Fresh</h4>
+                <Text variant="h3" gradient="watermelon">Watermelon Fresh Gradient</Text>
+                <Text variant="body" gradient="watermelon">Rose to pink gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Plum Purple</h4>
+                <Text variant="h3" gradient="plum">Plum Purple Gradient</Text>
+                <Text variant="body" gradient="plum">Deep purple gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Magenta Storm</h4>
+                <Text variant="h3" gradient="magenta">Magenta Storm Gradient</Text>
+                <Text variant="body" gradient="magenta">Fuchsia to purple gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Lavender Fields</h4>
+                <Text variant="h3" gradient="lavender">Lavender Fields Gradient</Text>
+                <Text variant="body" gradient="lavender">Soft lavender gradient text</Text>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Violet Magic</h4>
+                <Text variant="h3" gradient="violet">Violet Magic Gradient</Text>
+                <Text variant="body" gradient="violet">Violet to purple gradient text</Text>
+              </div>
+            </div>
+          </div>
+
+          {/* Badges - New Themes */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">🏷️ Badge Component - New Themes</h3>
+            
+            <div className="space-y-4">
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Amethyst:</span>
+                <Badge variant="amethyst" size="sm">Small</Badge>
+                <Badge variant="amethyst">Medium</Badge>
+                <Badge variant="amethyst" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Arctic:</span>
+                <Badge variant="arctic" size="sm">Small</Badge>
+                <Badge variant="arctic">Medium</Badge>
+                <Badge variant="arctic" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Sky Blue:</span>
+                <Badge variant="skyblue" size="sm">Small</Badge>
+                <Badge variant="skyblue">Medium</Badge>
+                <Badge variant="skyblue" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Turquoise:</span>
+                <Badge variant="turquoise" size="sm">Small</Badge>
+                <Badge variant="turquoise">Medium</Badge>
+                <Badge variant="turquoise" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Neon Cyan:</span>
+                <Badge variant="neoncyan" size="sm">Small</Badge>
+                <Badge variant="neoncyan">Medium</Badge>
+                <Badge variant="neoncyan" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Neon Orange:</span>
+                <Badge variant="neonorange" size="sm">Small</Badge>
+                <Badge variant="neonorange">Medium</Badge>
+                <Badge variant="neonorange" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Electric Lime:</span>
+                <Badge variant="electriclime" size="sm">Small</Badge>
+                <Badge variant="electriclime">Medium</Badge>
+                <Badge variant="electriclime" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Seafoam:</span>
+                <Badge variant="seafoam" size="sm">Small</Badge>
+                <Badge variant="seafoam">Medium</Badge>
+                <Badge variant="seafoam" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Mint Ice:</span>
+                <Badge variant="mintice" size="sm">Small</Badge>
+                <Badge variant="mintice">Medium</Badge>
+                <Badge variant="mintice" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Watermelon:</span>
+                <Badge variant="watermelon" size="sm">Small</Badge>
+                <Badge variant="watermelon">Medium</Badge>
+                <Badge variant="watermelon" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Plum:</span>
+                <Badge variant="plum" size="sm">Small</Badge>
+                <Badge variant="plum">Medium</Badge>
+                <Badge variant="plum" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Magenta:</span>
+                <Badge variant="magenta" size="sm">Small</Badge>
+                <Badge variant="magenta">Medium</Badge>
+                <Badge variant="magenta" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Lavender:</span>
+                <Badge variant="lavender" size="sm">Small</Badge>
+                <Badge variant="lavender">Medium</Badge>
+                <Badge variant="lavender" size="lg">Large</Badge>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Violet:</span>
+                <Badge variant="violet" size="sm">Small</Badge>
+                <Badge variant="violet">Medium</Badge>
+                <Badge variant="violet" size="lg">Large</Badge>
+              </div>
+            </div>
+          </div>
+
+          {/* Buttons - New Themes */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">🔘 Button Component - New Themes</h3>
+            
+            <div className="space-y-4">
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Amethyst:</span>
+                <Button variant="amethyst" size="sm">Small</Button>
+                <Button variant="amethyst">Medium</Button>
+                <Button variant="amethyst" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Arctic:</span>
+                <Button variant="arctic" size="sm">Small</Button>
+                <Button variant="arctic">Medium</Button>
+                <Button variant="arctic" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Sky Blue:</span>
+                <Button variant="skyblue" size="sm">Small</Button>
+                <Button variant="skyblue">Medium</Button>
+                <Button variant="skyblue" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Turquoise:</span>
+                <Button variant="turquoise" size="sm">Small</Button>
+                <Button variant="turquoise">Medium</Button>
+                <Button variant="turquoise" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Neon Cyan:</span>
+                <Button variant="neoncyan" size="sm">Small</Button>
+                <Button variant="neoncyan">Medium</Button>
+                <Button variant="neoncyan" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Neon Orange:</span>
+                <Button variant="neonorange" size="sm">Small</Button>
+                <Button variant="neonorange">Medium</Button>
+                <Button variant="neonorange" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Electric Lime:</span>
+                <Button variant="electriclime" size="sm">Small</Button>
+                <Button variant="electriclime">Medium</Button>
+                <Button variant="electriclime" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Seafoam:</span>
+                <Button variant="seafoam" size="sm">Small</Button>
+                <Button variant="seafoam">Medium</Button>
+                <Button variant="seafoam" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Mint Ice:</span>
+                <Button variant="mintice" size="sm">Small</Button>
+                <Button variant="mintice">Medium</Button>
+                <Button variant="mintice" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Watermelon:</span>
+                <Button variant="watermelon" size="sm">Small</Button>
+                <Button variant="watermelon">Medium</Button>
+                <Button variant="watermelon" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Plum:</span>
+                <Button variant="plum" size="sm">Small</Button>
+                <Button variant="plum">Medium</Button>
+                <Button variant="plum" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Magenta:</span>
+                <Button variant="magenta" size="sm">Small</Button>
+                <Button variant="magenta">Medium</Button>
+                <Button variant="magenta" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Lavender:</span>
+                <Button variant="lavender" size="sm">Small</Button>
+                <Button variant="lavender">Medium</Button>
+                <Button variant="lavender" size="lg">Large</Button>
+              </div>
+
+              <div className="flex flex-wrap gap-3 items-center">
+                <span className="text-gray-700 font-medium w-40">Violet:</span>
+                <Button variant="violet" size="sm">Small</Button>
+                <Button variant="violet">Medium</Button>
+                <Button variant="violet" size="lg">Large</Button>
+              </div>
+            </div>
+          </div>
+
+          {/* Tabs - New Themes */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">📑 Tabs Component - New Themes</h3>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Tabs</h4>
+                <Tabs
+                  variant="amethyst"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Amethyst theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Arctic Tabs</h4>
+                <Tabs
+                  variant="arctic"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Arctic theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Sky Blue Tabs</h4>
+                <Tabs
+                  variant="skyblue"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Sky Blue theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Turquoise Tabs</h4>
+                <Tabs
+                  variant="turquoise"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Turquoise theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Cyan Tabs</h4>
+                <Tabs
+                  variant="neoncyan"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Neon Cyan theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Orange Tabs</h4>
+                <Tabs
+                  variant="neonorange"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Neon Orange theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Electric Lime Tabs</h4>
+                <Tabs
+                  variant="electriclime"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Electric Lime theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Seafoam Tabs</h4>
+                <Tabs
+                  variant="seafoam"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Seafoam theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Mint Ice Tabs</h4>
+                <Tabs
+                  variant="mintice"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Mint Ice theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Watermelon Tabs</h4>
+                <Tabs
+                  variant="watermelon"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Watermelon theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Plum Tabs</h4>
+                <Tabs
+                  variant="plum"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Plum theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Magenta Tabs</h4>
+                <Tabs
+                  variant="magenta"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Magenta theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Lavender Tabs</h4>
+                <Tabs
+                  variant="lavender"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Lavender theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Violet Tabs</h4>
+                <Tabs
+                  variant="violet"
+                  items={[
+                    { key: 'tab1', label: 'Tab 1', content: <div><Text variant="body" color="black">Violet theme tab content</Text></div> },
+                    { key: 'tab2', label: 'Tab 2', content: <div><Text variant="body" color="black">Second tab content</Text></div> },
+                    { key: 'tab3', label: 'Tab 3', content: <div><Text variant="body" color="black">Third tab content</Text></div> }
+                  ]}
+                  defaultActiveKey="tab1"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Tables - New Themes */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">📊 Table Component - New Themes</h3>
+            
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Table</h4>
+                <Table
+                  variant="amethyst"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Arctic Table</h4>
+                <Table
+                  variant="arctic"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Sky Blue Table</h4>
+                <Table
+                  variant="skyblue"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Turquoise Table</h4>
+                <Table
+                  variant="turquoise"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Cyan Table</h4>
+                <Table
+                  variant="neoncyan"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Orange Table</h4>
+                <Table
+                  variant="neonorange"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Electric Lime Table</h4>
+                <Table
+                  variant="electriclime"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Seafoam Table</h4>
+                <Table
+                  variant="seafoam"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Mint Ice Table</h4>
+                <Table
+                  variant="mintice"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Watermelon Table</h4>
+                <Table
+                  variant="watermelon"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Plum Table</h4>
+                <Table
+                  variant="plum"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Magenta Table</h4>
+                <Table
+                  variant="magenta"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Lavender Table</h4>
+                <Table
+                  variant="lavender"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Violet Table</h4>
+                <Table
+                  variant="violet"
+                  columns={tableColumns}
+                  data={tableData}
+                  striped
+                  hoverable
+                  bordered
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Product Cards - New Themes */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">🛍️ Product Card Component - New Themes</h3>
+            
+            <div className="space-y-8">
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="amethyst"
+                    variant="amethyst"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="amethyst"
+                    variant="amethyst"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="amethyst"
+                    variant="amethyst"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Arctic Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="arctic"
+                    variant="arctic"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="arctic"
+                    variant="arctic"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="arctic"
+                    variant="arctic"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Sky Blue Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="skyblue"
+                    variant="skyblue"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="skyblue"
+                    variant="skyblue"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="skyblue"
+                    variant="skyblue"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Turquoise Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="turquoise"
+                    variant="turquoise"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="turquoise"
+                    variant="turquoise"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="turquoise"
+                    variant="turquoise"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Cyan Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="neoncyan"
+                    variant="neoncyan"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="neoncyan"
+                    variant="neoncyan"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="neoncyan"
+                    variant="neoncyan"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Neon Orange Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="neonorange"
+                    variant="neonorange"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="neonorange"
+                    variant="neonorange"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="neonorange"
+                    variant="neonorange"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Electric Lime Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="electriclime"
+                    variant="electriclime"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="electriclime"
+                    variant="electriclime"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="electriclime"
+                    variant="electriclime"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Seafoam Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="seafoam"
+                    variant="seafoam"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="seafoam"
+                    variant="seafoam"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="seafoam"
+                    variant="seafoam"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Mint Ice Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="mintice"
+                    variant="mintice"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="mintice"
+                    variant="mintice"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="mintice"
+                    variant="mintice"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Watermelon Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="watermelon"
+                    variant="watermelon"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="watermelon"
+                    variant="watermelon"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="watermelon"
+                    variant="watermelon"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Plum Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="plum"
+                    variant="plum"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="plum"
+                    variant="plum"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="plum"
+                    variant="plum"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Magenta Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="magenta"
+                    variant="magenta"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="magenta"
+                    variant="magenta"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="magenta"
+                    variant="magenta"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Lavender Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="lavender"
+                    variant="lavender"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="lavender"
+                    variant="lavender"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="lavender"
+                    variant="lavender"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-lg font-semibold text-gray-700 mb-3">Violet Cards</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <ProductCard
+                    title="Premium Laptop"
+                    description="High-performance laptop with latest technology."
+                    price="$1,299"
+                    image="/images/example.png"
+                    badge="New"
+                    badgeVariant="violet"
+                    variant="violet"
+                  />
+                  <ProductCard
+                    title="Wireless Headphones"
+                    description="Noise-cancelling with premium sound quality."
+                    price="$199"
+                    image="/images/example.png"
+                    badge="Sale"
+                    badgeVariant="violet"
+                    variant="violet"
+                  />
+                  <ProductCard
+                    title="Smart Watch"
+                    description="Advanced smartwatch with health monitoring."
+                    price="$399"
+                    image="/images/example.png"
+                    badge="Popular"
+                    badgeVariant="violet"
+                    variant="violet"
+                  />
+                </div>
               </div>
             </div>
           </div>

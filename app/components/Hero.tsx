@@ -1,7 +1,7 @@
 'use client';
 
 import TypingAnimation from './TypingAnimation';
-import { Button, Badge, SocialLink, Text } from './common';
+import { Button, Badge, SocialLink, Text } from './theam';
 
 const Hero = () => {
 
@@ -29,7 +29,7 @@ const Hero = () => {
           <div id="hero-content" className="text-white space-y-7 relative z-40">
             {/* Small text with enhanced styling */}
             <div id="hero-greeting" className="inline-block">
-              <Badge variant="primary" className="tracking-[0.3em]">
+              <Badge variant="emerald" size="lg" className="tracking-[0.3em]">
                 Hallo
               </Badge>
             </div>
@@ -79,8 +79,8 @@ const Hero = () => {
             <div id="hero-buttons" className="flex flex-col sm:flex-row gap-6">
               <Button
                 scrollTo="projects"
-                variant="primary"
-                size="sm"
+                variant="emerald"
+                size="lg"
               >
                 View My Work
                 <svg className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-500 ease-out" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,8 +98,7 @@ const Hero = () => {
                   document.body.removeChild(link);
                 }}
                 variant="outline"
-                size="sm"
-                color="gray"
+                size="lg"
               >
                 Download Resume
                 <svg className="w-5 h-5 ml-3 group-hover:rotate-12 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

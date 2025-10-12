@@ -1,6 +1,6 @@
 'use client';
 
-import { Text, Card, Badge } from './common';
+import { Text, Card, Badge } from './theam';
 
 const Education = () => {
   const education = [
@@ -150,10 +150,10 @@ const Education = () => {
                     </div>
                     
                     <div className="flex flex-wrap gap-2">
-                      <Badge variant="primary" size="sm">
+                      <Badge variant="emerald" size="md">
                         {edu.duration}
                       </Badge>
-                      <Badge variant="success" size="sm">
+                      <Badge variant="elegant" size="md">
                         GPA: {edu.gpa}
                       </Badge>
                     </div>
@@ -194,7 +194,7 @@ const Education = () => {
                       </Text>
                       <div className="flex flex-wrap gap-2">
                         {edu.courses.map((course, courseIndex) => (
-                          <Badge key={courseIndex} variant="secondary" size="sm">
+                          <Badge key={courseIndex} variant="elegant" size="sm">
                             {course}
                           </Badge>
                         ))}
@@ -280,7 +280,7 @@ const Education = () => {
                       {cert.issuer}
                     </Text>
                     <div className="flex items-center space-x-2">
-                      <Badge variant="success" size="sm">
+                      <Badge variant="elegant" size="sm">
                         {cert.date}
                       </Badge>
                       <Text variant="small" fontFamily="poppins" color="gray">
@@ -311,7 +311,7 @@ const Education = () => {
                   </Text>
                   <div className="flex flex-wrap gap-1">
                     {cert.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" size="sm">
+                      <Badge key={skillIndex} variant="emerald" size="sm">
                         {skill}
                       </Badge>
                     ))}

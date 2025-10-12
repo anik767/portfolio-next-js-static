@@ -1,6 +1,6 @@
 'use client';
 
-import { Text, Badge, Card } from './common';
+import { Text, Badge, Card } from './theam';
 
 const About = () => {
   const skills = [
@@ -78,13 +78,13 @@ const About = () => {
               in web development.
             </Text>
             <div className="flex flex-wrap gap-4">
-              <Badge variant="primary">
+              <Badge variant="emerald" size="lg">
                 2+ Years Experience
               </Badge>
-              <Badge variant="success">
+              <Badge variant="cyanblue" size="lg">
                 20+ Projects
               </Badge>
-              <Badge variant="warning">
+              <Badge variant="elegant" size="lg">
                 Remote Work
               </Badge>
             </div>
