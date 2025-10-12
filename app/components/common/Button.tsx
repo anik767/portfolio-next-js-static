@@ -6,7 +6,7 @@ interface ButtonProps {
   children: ReactNode;
   onClick?: () => void;
   scrollTo?: string;
-  variant?: 'primary' | 'secondary' | 'outline' | 'success' | 'warning' | 'info' | 'accent';
+  variant?: 'emerald' | 'outline' | 'cyanblue' | 'lime' | 'sunset' | 'dark' | 'elegant' | 'fuchsia' | 'sky' | 'ocean' | 'rose';
   size?: 'sm' | 'md' | 'lg';
   Align?: 'left' | 'center' | 'right';
   color?: 'blue' | 'white' | 'pink' | 'purple' | 'gray' | 'black' | 'green' | 'red' | 'yellow' | 'indigo' | 'cyan';
@@ -19,7 +19,7 @@ const Button = ({
   children, 
   onClick, 
   scrollTo,
-  variant = 'primary', 
+  variant = 'emerald', 
   size = 'md',
   Align = 'center',
   color = 'black',
@@ -33,37 +33,26 @@ const Button = ({
     right: "justify-end"
   };
 
-  const baseClasses = "font-bold rounded-full shadow-lg transition-all text-white-500 duration-500 ease-out flex items-center group transform hover:shadow-xl backdrop-blur-sm cursor-pointer hover:scale-105";
+  const baseClasses = "font-bold rounded-full shadow-lg transition-all duration-300 ease-out flex items-center group transform hover:shadow-xl backdrop-blur-sm cursor-pointer hover:scale-105";
   
   const sizeClasses = {
-    sm: "py-3 px-5 text-sm",
-    md: "py-3 px-6 text-base",
-    lg: "py-3 px-8 text-lg"
+    sm: "py-2 px-5 text-sm",
+    md: "py-2 px-6 text-base",
+    lg: "py-2 px-8 text-lg"
   };
 
   const variantClasses = {
-    primary: "bg-blue-500",
-    secondary: "bg-violet-500",
-    success: "bg-emerald-500",
-    outline: "bg-transparent hover:bg-white/10 border-2 border-blue-500",
-    warning: "bg-rose-500",
-    info: "bg-gray-500",
-    accent: "bg-orange-400/10 border-2 border-orange-400 text-orange-400"
-  };
-  
-  // Tailwind-safe explicit color classes for outline variant
-  const outlineColorClasses: Record<NonNullable<ButtonProps['color']>, string> = {
-    blue:   "text-blue-500 border-blue-400/50 hover:border-blue-500",
-    white:  "text-white border-white/80 hover:border-white",
-    pink:   "text-pink-500 border-pink-400/50 hover:border-pink-500",
-    purple: "text-purple-500 border-purple-400/50 hover:border-purple-500",
-    gray:   "text-gray-200 border-gray-300/60 hover:border-gray-200",
-    black:  "text-black border-black/40 hover:border-black",
-    green:  "text-green-500 border-green-400/50 hover:border-green-500",
-    red:    "text-red-500 border-red-400/50 hover:border-red-500",
-    yellow: "text-yellow-500 border-yellow-400/50 hover:border-yellow-500",
-    indigo: "text-indigo-500 border-indigo-400/50 hover:border-indigo-500",
-    cyan:   "text-cyan-500 border-cyan-400/50 hover:border-cyan-500",
+    emerald: "bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-emerald-500/30",
+    outline: "bg-blue-500 text-white border-b-4 border-blue-700 shadow-blue-500/30",
+    cyanblue: "bg-gradient-to-r from-cyan-500 to-blue-600 text-white shadow-cyan-500/30",
+    lime: "bg-gradient-to-r from-lime-400 to-green-500 text-white border-2 border-lime-500 shadow-lime-400/50 hover:shadow-lime-400/70",
+    sunset: "bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 text-white shadow-pink-500/40",
+    dark: "bg-gradient-to-r from-gray-800 to-gray-900 text-white shadow-gray-800/40",
+    elegant: "bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-amber-500/30",
+    fuchsia: "bg-gradient-to-r from-fuchsia-500 to-pink-600 text-white shadow-fuchsia-500/40",
+    sky: "bg-gradient-to-r from-sky-400 to-blue-500 text-white shadow-sky-500/40",
+    ocean: "bg-gradient-to-r from-teal-400 to-cyan-500 text-white shadow-teal-500/40",
+    rose: "bg-rose-500 text-white shadow-rose-500/30 border-2 border-rose-300"
   };
 
   const disabledClasses = disabled ? "opacity-50 cursor-not-allowed hover:-none hover:scale-100" : "";
@@ -89,7 +78,7 @@ const Button = ({
       type={type}
       onClick={handleClick}
       disabled={disabled}
-      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${variant === 'outline' ? outlineColorClasses[color] : ''} ${AlignClasses[Align as keyof typeof AlignClasses]} ${disabledClasses} ${className}`}
+      className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${AlignClasses[Align as keyof typeof AlignClasses]} ${disabledClasses} ${className}`}
     
     >
       {children}
