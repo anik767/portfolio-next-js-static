@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import SocialLink from './common/SocialLink';
+import SocialLink from './theam/SocialLink';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

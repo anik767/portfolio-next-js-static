@@ -1,6 +1,6 @@
 'use client';
 
-import { Text, Card, Button, SocialLink } from './common';
+import { Text, Card, Button } from './theam';
 
 const Contact = () => {
   const contactInfo = [
@@ -133,7 +133,7 @@ const Contact = () => {
                 <div className="mt-4">
                   <Button
                     onClick={() => window.open(info.action, '_self')}
-                    variant="secondary"
+                    variant="emerald"
                     size="sm"
                       Align="center"
                       className="w-full"

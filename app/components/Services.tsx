@@ -1,6 +1,6 @@
 'use client';
 
-import { Text, Button, Card } from './common';
+import { Text, Button, Card } from './theam';
 
 const Services = () => {
   const services = [

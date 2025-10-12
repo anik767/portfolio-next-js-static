@@ -1,6 +1,6 @@
 'use client';
 
-import { Text, Card, Badge , Button } from './common';
+import { Text, Card, Badge , Button } from './theam';
 
 const Experience = () => {
   const experiences = [
@@ -113,7 +113,7 @@ const Experience = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Badge variant="primary" size="sm">
+                    <Badge variant="emerald" size="md">
                       {exp.duration}
                     </Badge>
                     <Text 
@@ -152,7 +152,7 @@ const Experience = () => {
                     </Text>
                     <div className="flex flex-wrap gap-2">
                       {exp.technologies.map((tech, techIndex) => (
-                        <Badge key={techIndex} variant="secondary" size="sm">
+                        <Badge key={techIndex} variant="elegant" size="sm">
                           {tech}
                         </Badge>
                       ))}
