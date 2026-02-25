@@ -61,6 +61,13 @@ const Test = () => {
     }
   ];
 
+  const todayString = new Date().toLocaleDateString('en-US', {
+    weekday: 'short',
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 py-20 px-4">
@@ -1335,7 +1342,7 @@ const Test = () => {
           {/* Text Component - New Gradients */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">📝 Text Component - New Gradient Themes</h3>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Purple</h4>
@@ -1426,7 +1433,7 @@ const Test = () => {
           {/* Badges - New Themes */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">🏷️ Badge Component - New Themes</h3>
-            
+
             <div className="space-y-4">
               <div className="flex flex-wrap gap-3 items-center">
                 <span className="text-gray-700 font-medium w-40">Amethyst:</span>
@@ -1531,7 +1538,7 @@ const Test = () => {
           {/* Buttons - New Themes */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">🔘 Button Component - New Themes</h3>
-            
+
             <div className="space-y-4">
               <div className="flex flex-wrap gap-3 items-center">
                 <span className="text-gray-700 font-medium w-40">Amethyst:</span>
@@ -1636,7 +1643,7 @@ const Test = () => {
           {/* Tabs - New Themes */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">📑 Tabs Component - New Themes</h3>
-            
+
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div>
                 <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Tabs</h4>
@@ -1825,7 +1832,7 @@ const Test = () => {
           {/* Tables - New Themes */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">📊 Table Component - New Themes</h3>
-            
+
             <div className="space-y-8">
               <div>
                 <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Table</h4>
@@ -2000,7 +2007,7 @@ const Test = () => {
           {/* Product Cards - New Themes */}
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b">🛍️ Product Card Component - New Themes</h3>
-            
+
             <div className="space-y-8">
               <div>
                 <h4 className="text-lg font-semibold text-gray-700 mb-3">Amethyst Cards</h4>
@@ -2498,7 +2505,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Violet Magic Theme */}
             <div className="border-b pb-6">
@@ -2516,9 +2523,9 @@ const Test = () => {
               </div>
             </div>
 
-            
 
-            
+
+
 
             {/* Coral Reef Theme */}
             <div className="border-b pb-6">
@@ -2602,7 +2609,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Slate Storm Theme */}
             <div className="border-b pb-6">
@@ -2653,7 +2660,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Magenta Storm Theme */}
             <div className="border-b pb-6">
@@ -2687,7 +2694,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Burgundy Wine Theme */}
             <div className="border-b pb-6">
@@ -2721,9 +2728,9 @@ const Test = () => {
               </div>
             </div>
 
-            
 
-            
+
+
 
             {/* Plum Purple Theme */}
             <div className="border-b pb-6">
@@ -2757,7 +2764,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Twilight Blue Theme */}
             <div className="border-b pb-6">
@@ -2807,7 +2814,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* ==================== PINK & ROSE FAMILY ==================== */}
             <div className="mb-8 mt-12">
@@ -3267,7 +3274,7 @@ const Test = () => {
               </div>
             </div>
 
-              {/* Electric Blue Theme */}
+            {/* Electric Blue Theme */}
             <div className="border-b pb-6">
               <h3 className="text-xl font-bold text-gray-800 mb-4">⚡ Electric Blue</h3>
               <div className="flex flex-wrap gap-4">
@@ -3346,7 +3353,7 @@ const Test = () => {
                 </button>
               </div>
             </div>
-            
+
             {/* ==================== PURPLE & VIOLET FAMILY ==================== */}
             <div className="mb-8 mt-12">
               <h2 className="text-2xl font-bold text-purple-600 mb-4 pb-2 border-b-2 border-purple-200">👑 Purple & Violet Family</h2>
@@ -3384,7 +3391,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Graphite Gray Theme */}
             <div className="border-b pb-6">
@@ -3418,7 +3425,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Lavender Dream Theme */}
             <div className="border-b pb-6">
@@ -3468,7 +3475,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Midnight Blue Theme */}
             <div className="border-b pb-6">
@@ -3550,7 +3557,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Berry Blast Theme */}
             <div className="border-b pb-6">
@@ -3568,7 +3575,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Peach Cream Theme */}
             <div className="border-b pb-6">
@@ -3602,7 +3609,7 @@ const Test = () => {
               </div>
             </div>
 
-            
+
 
             {/* Copper Bronze Theme */}
             <div className="border-b pb-6">
@@ -3695,6 +3702,358 @@ const Test = () => {
                   Gradient
                 </button>
                 <button className="px-6 py-3 bg-orange-300 text-gray-900 rounded-full shadow-lg shadow-orange-300/60 hover:shadow-2xl hover:shadow-orange-300/80 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">2 / 25 / 2026</h1>
+            {/* Aurora Cyan Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🌈 Aurora Cyan</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-cyan-400 text-white rounded-lg shadow-lg shadow-cyan-400/60 hover:shadow-2xl hover:shadow-cyan-400/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-cyan-300 via-sky-400 to-blue-500 text-white rounded-lg shadow-2xl shadow-sky-400/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-sky-500 text-white rounded-full shadow-xl shadow-sky-500/80 hover:shadow-2xl hover:shadow-sky-500/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Frost Glass Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🧊 Frost Glass</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-slate-100/80 text-slate-800 rounded-lg shadow-lg shadow-slate-300/60 backdrop-blur-sm border border-white/70 hover:shadow-2xl hover:shadow-slate-300/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-slate-100/80 via-white/80 to-sky-100/80 text-slate-800 rounded-lg shadow-xl shadow-sky-200/60 backdrop-blur-sm border border-white/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-white/80 text-slate-900 rounded-full shadow-xl shadow-slate-200/80 backdrop-blur-md border border-white hover:shadow-2xl hover:shadow-slate-300/90 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Lemon Soda Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🍋 Lemon Soda</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-lime-400 text-gray-900 rounded-lg shadow-lg shadow-lime-400/60 hover:shadow-2xl hover:shadow-lime-400/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-yellow-300 via-lime-300 to-emerald-400 text-gray-900 rounded-lg shadow-2xl shadow-lime-400/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-yellow-300 text-gray-900 rounded-full shadow-xl shadow-yellow-300/80 hover:shadow-2xl hover:shadow-yellow-300/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Candy Pop Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🍭 Candy Pop</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-pink-500 text-white rounded-lg shadow-lg shadow-pink-500/60 hover:shadow-2xl hover:shadow-pink-500/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-pink-400 via-rose-400 to-yellow-300 text-white rounded-lg shadow-2xl shadow-pink-500/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-rose-500 text-white rounded-full shadow-xl shadow-rose-500/80 hover:shadow-2xl hover:shadow-rose-500/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Midnight Purple Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🌌 Midnight Purple</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-violet-800 text-white rounded-lg shadow-lg shadow-violet-800/70 hover:shadow-2xl hover:shadow-violet-800/90 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-indigo-700 via-violet-700 to-fuchsia-700 text-white rounded-lg shadow-2xl shadow-violet-700/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-purple-900 text-white rounded-full shadow-xl shadow-purple-900/80 hover:shadow-2xl hover:shadow-purple-900/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Ocean Wave Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🌊 Ocean Wave</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-teal-500 text-white rounded-lg shadow-lg shadow-teal-500/60 hover:shadow-2xl hover:shadow-teal-500/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-teal-400 via-cyan-400 to-sky-500 text-white rounded-lg shadow-2xl shadow-cyan-400/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-cyan-500 text-white rounded-full shadow-xl shadow-cyan-500/80 hover:shadow-2xl hover:shadow-cyan-500/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Forest Emerald Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🌲 Forest Emerald</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-emerald-600 text-white rounded-lg shadow-lg shadow-emerald-600/60 hover:shadow-2xl hover:shadow-emerald-600/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-emerald-400 via-green-500 to-lime-500 text-white rounded-lg shadow-2xl shadow-emerald-500/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-green-700 text-white rounded-full shadow-xl shadow-green-700/80 hover:shadow-2xl hover:shadow-green-700/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Coral Reef Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🐚 Coral Reef</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-orange-400 text-white rounded-lg shadow-lg shadow-orange-400/60 hover:shadow-2xl hover:shadow-orange-400/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-orange-300 via-rose-300 to-pink-400 text-white rounded-lg shadow-2xl shadow-orange-400/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-rose-400 text-white rounded-full shadow-xl shadow-rose-400/80 hover:shadow-2xl hover:shadow-rose-400/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Cyber Neon Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">💾 Cyber Neon</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-slate-900 text-teal-300 rounded-lg shadow-lg shadow-teal-400/50 hover:shadow-2xl hover:shadow-teal-400/80 transition-all border border-teal-400/60">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-fuchsia-500 via-violet-500 to-cyan-400 text-white rounded-lg shadow-2xl shadow-fuchsia-500/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-slate-800 text-cyan-300 rounded-full shadow-xl shadow-cyan-400/80 hover:shadow-2xl hover:shadow-cyan-400/95 transition-all border border-cyan-400/60">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Royal Gold Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">👑 Royal Gold</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-yellow-500 text-gray-900 rounded-lg shadow-lg shadow-yellow-500/60 hover:shadow-2xl hover:shadow-yellow-500/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-amber-400 via-yellow-400 to-orange-500 text-gray-900 rounded-lg shadow-2xl shadow-amber-400/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-orange-500 text-white rounded-full shadow-xl shadow-orange-500/80 hover:shadow-2xl hover:shadow-orange-500/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Mint Breeze Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🌿 Mint Breeze</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-emerald-300 text-gray-900 rounded-lg shadow-lg shadow-emerald-300/60 hover:shadow-2xl hover:shadow-emerald-300/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-emerald-200 via-teal-200 to-cyan-300 text-gray-900 rounded-lg shadow-2xl shadow-emerald-300/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-teal-300 text-gray-900 rounded-full shadow-xl shadow-teal-300/80 hover:shadow-2xl hover:shadow-teal-300/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Lavender Dream Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">💜 Lavender Dream</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-purple-300 text-gray-900 rounded-lg shadow-lg shadow-purple-300/60 hover:shadow-2xl hover:shadow-purple-300/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-purple-200 via-violet-300 to-pink-300 text-gray-900 rounded-lg shadow-2xl shadow-purple-300/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-violet-300 text-gray-900 rounded-full shadow-xl shadow-violet-300/80 hover:shadow-2xl hover:shadow-violet-300/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Cherry Soda Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🍒 Cherry Soda</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-red-500 text-white rounded-lg shadow-lg shadow-red-500/60 hover:shadow-2xl hover:shadow-red-500/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-red-400 via-rose-500 to-pink-500 text-white rounded-lg shadow-2xl shadow-red-500/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-rose-500 text-white rounded-full shadow-xl shadow-rose-500/80 hover:shadow-2xl hover:shadow-rose-500/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Arctic Glow Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🧵 Arctic Glow</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-sky-200 text-slate-900 rounded-lg shadow-lg shadow-sky-200/60 hover:shadow-2xl hover:shadow-sky-200/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-sky-200 via-cyan-200 to-indigo-300 text-slate-900 rounded-lg shadow-2xl shadow-sky-300/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-cyan-200 text-slate-900 rounded-full shadow-xl shadow-cyan-200/80 hover:shadow-2xl hover:shadow-cyan-200/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Retro Sunset Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">📼 Retro Sunset</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-fuchsia-500 text-white rounded-lg shadow-lg shadow-fuchsia-500/60 hover:shadow-2xl hover:shadow-fuchsia-500/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-fuchsia-500 via-pink-500 to-amber-300 text-white rounded-lg shadow-2xl shadow-fuchsia-500/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-amber-300 text-gray-900 rounded-full shadow-xl shadow-amber-300/80 hover:shadow-2xl hover:shadow-amber-300/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Space Indigo Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🚀 Space Indigo</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-indigo-900 text-white rounded-lg shadow-lg shadow-indigo-900/60 hover:shadow-2xl hover:shadow-indigo-900/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-indigo-700 via-sky-600 to-cyan-400 text-white rounded-lg shadow-2xl shadow-indigo-800/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-slate-900 text-white rounded-full shadow-xl shadow-slate-900/80 hover:shadow-2xl hover:shadow-slate-900/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Peach Sorbet Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🍑 Peach Sorbet</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-orange-200 text-gray-900 rounded-lg shadow-lg shadow-orange-200/60 hover:shadow-2xl hover:shadow-orange-200/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-orange-200 via-rose-200 to-pink-200 text-gray-900 rounded-lg shadow-2xl shadow-orange-200/60 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-rose-200 text-gray-900 rounded-full shadow-xl shadow-rose-200/80 hover:shadow-2xl hover:shadow-rose-200/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Lime Punch Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🥤 Lime Punch</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-lime-500 text-gray-900 rounded-lg shadow-lg shadow-lime-500/60 hover:shadow-2xl hover:shadow-lime-500/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-lime-400 via-emerald-400 to-teal-400 text-gray-900 rounded-lg shadow-2xl shadow-lime-400/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-emerald-400 text-gray-900 rounded-full shadow-xl shadow-emerald-400/80 hover:shadow-2xl hover:shadow-emerald-400/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Steel Blue Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🛠 Steel Blue</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-slate-700 text-white rounded-lg shadow-lg shadow-slate-700/60 hover:shadow-2xl hover:shadow-slate-700/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-slate-600 via-slate-500 to-slate-400 text-white rounded-lg shadow-2xl shadow-slate-700/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-slate-800 text-white rounded-full shadow-xl shadow-slate-800/80 hover:shadow-2xl hover:shadow-slate-800/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Ice Cream Party Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">🍨 Ice Cream Party</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-pink-200 text-gray-900 rounded-lg shadow-lg shadow-pink-200/60 hover:shadow-2xl hover:shadow-pink-200/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-pink-200 via-yellow-200 to-sky-200 text-gray-900 rounded-lg shadow-2xl shadow-pink-200/70 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-yellow-200 text-gray-900 rounded-full shadow-xl shadow-yellow-200/80 hover:shadow-2xl hover:shadow-yellow-200/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Neon Lime Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">💡 Neon Lime</h3>
+              <div className="flex flex-wrap gap-4">
+                <button className="px-6 py-3 bg-lime-400 text-slate-900 rounded-lg shadow-lg shadow-lime-400/70 hover:shadow-2xl hover:shadow-lime-400/90 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-lime-300 via-yellow-300 to-emerald-400 text-slate-900 rounded-lg shadow-2xl shadow-lime-400/80 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-emerald-300 text-slate-900 rounded-full shadow-xl shadow-emerald-300/80 hover:shadow-2xl hover:shadow-emerald-300/95 transition-all">
+                  Rounded
+                </button>
+              </div>
+            </div>
+
+            {/* Black Glass Theme */}
+            <div className="border-b pb-6">
+              <h3 className="text-xl font-bold text-gray-100 mb-4">🧿 Black Glass</h3>
+              <div className="flex flex-wrap gap-4 bg-gradient-to-r from-slate-950 via-black to-slate-900 rounded-2xl px-4 py-4">
+                <button className="px-6 py-3 bg-white/10 text-white rounded-lg shadow-lg shadow-black/60 backdrop-blur-md border border-white/10 hover:shadow-2xl hover:shadow-black/80 transition-all">
+                  Button
+                </button>
+                <button className="px-6 py-3 bg-gradient-to-r from-fuchsia-500/60 via-cyan-400/60 to-emerald-400/60 text-white rounded-lg shadow-2xl shadow-fuchsia-500/70 backdrop-blur-lg border border-white/10 hover:shadow-2xl hover:scale-105 transition-all">
+                  Gradient
+                </button>
+                <button className="px-6 py-3 bg-slate-900/80 text-white rounded-full shadow-xl shadow-black/80 backdrop-blur-md border border-white/10 hover:shadow-2xl hover:shadow-black/95 transition-all">
                   Rounded
                 </button>
               </div>
