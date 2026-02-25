@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/lighthouse-reports
 /.pnp
 .pnp.*
 .yarn/*
