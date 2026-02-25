@@ -15,11 +15,11 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-const Button = ({ 
-  children, 
-  onClick, 
+const Button = ({
+  children,
+  onClick,
   scrollTo,
-  variant = 'emerald', 
+  variant = 'emerald',
   size = 'md',
   Align = 'center',
   color = 'black',
@@ -33,8 +33,8 @@ const Button = ({
     right: "justify-end"
   };
 
-  const baseClasses = "font-bold rounded-full shadow-lg transition-all duration-300 ease-out flex items-center group transform hover:shadow-xl backdrop-blur-sm cursor-pointer hover:scale-105";
-  
+  const baseClasses = "font-bold rounded-full shadow-lg transition-all duration-300 ease-out flex items-center group transform hover:shadow-xl backdrop-blur-sm cursor-pointer";
+
   const sizeClasses = {
     sm: "py-2 px-5 text-sm",
     md: "py-3 px-6 text-base",
@@ -78,7 +78,7 @@ const Button = ({
         // Get element position
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - 100; // 100px offset for fixed header
-        
+
         window.scrollTo({
           top: offsetPosition,
           behavior: 'smooth'
@@ -90,14 +90,14 @@ const Button = ({
   };
 
 
-  
+
   return (
     <button
       type={type}
       onClick={handleClick}
       disabled={disabled}
       className={`${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${AlignClasses[Align as keyof typeof AlignClasses]} ${disabledClasses} ${className}`}
-    
+
     >
       {children}
     </button>
